@@ -1,0 +1,14 @@
+<%= simple_form_for([:manager, @client], url: manager_clients_path,
+                    html: { class: 'relative' }) do |form| %>
+  <%= form.error_notification %>
+
+  <div class="flex justify-between items-center mb-4">
+    <h1 class="font-bold text-4xl">Create client</h1>
+    <div>
+      <%= form.submit class: 'cursor-pointer mr-2 items-center justify-center text-white bg-blue-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800' %>
+      <%= link_to "Back to clients", manager_clients_path, class: "mr-2 items-center justify-center text-white bg-blue-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800" %>
+    </div>
+  </div>
+
+  <%= render "form", form: form %>
+<% end %>
