@@ -1,12 +1,27 @@
-<div id="<%= dom_id client %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
-    <%= client.name %>
-  </p>
+<tr class="border-b dark:border-gray-700" id="<%= dom_id client %>">
+  <td class="px-4 py-3"> <%= client.name %></td>
 
-  <% if action_name != "show" %>
-    <%= link_to "Show this client", manager_client_path(client), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this client', edit_manager_client_path(client), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
-</div>
+  <td class="px-4 py-3 flex items-center justify-end">
+    <button id="<%= convert_to_id(client) %>-dropdown-button" data-dropdown-toggle="<%= convert_to_id(client) %>-dropdown" class="inline-flex items-center p-0.5 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-gray-400 dark:hover:text-gray-100" type="button">
+      <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"/>
+      </svg>
+    </button>
+    <div id="<%= convert_to_id(client) %>-dropdown" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+      <% if action_name != "show" %>
+        <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="apple-imac-27-dropdown-button">
+          <li>
+            <%= link_to 'Mostrar', manager_client_path(client), class: "block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" %>
+          </li>
+          <li>
+            <%= link_to 'Editar', edit_manager_client_path(client), class: "block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" %>
+          </li>
+        </ul>
+        <div class="py-1">
+          <%= link_to 'Deletar', manager_client_path(client),
+                      data: { turbo_method: :delete, turbo_confirm: 'Tem certeza?' }, class: "block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white" %>
+        </div>
+      <% end %>
+    </div>
+  </td>
+</tr>
