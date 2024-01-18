@@ -76,6 +76,13 @@ if Rails.env.development?
   Task.create(name: 'Treinamento do modelo', description: 'Treinar um modelo de chatbot',
               status: "done", goal: goal15)
 
+  # Creates Equipment
+  Equipment.create(tag: '001')
+  Equipment.create(tag: '002')
+  Equipment.create(tag: '003')
+  Equipment.create(tag: '004')
+  Equipment.create(tag: '005')
+
   # Creates maintenances
   Maintenance.create(date: Date.strptime('10/01/2024', '%d/%m/%Y'))
   Maintenance.create(date: Date.strptime('14/01/2024', '%d/%m/%Y'))
