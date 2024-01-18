@@ -17,7 +17,7 @@ class EquipmentsController < ApplicationController
     @equipment = Equipment.new(equipment_params)
 
     if @equipment.save
-      redirect_to @equipment, notice: 'Equipamento criado com sucesso.'
+      redirect_to @equipment, notice: t('.create')
     else
       render :new
     end
@@ -27,7 +27,7 @@ class EquipmentsController < ApplicationController
 
   def update
     if @equipment.update(equipment_params)
-      redirect_to @equipment, notice: 'Equipamento atualizado com sucesso.'
+      redirect_to @equipment, notice: t('.update')
     else
       render :edit
     end
@@ -35,7 +35,7 @@ class EquipmentsController < ApplicationController
 
   def destroy
     @equipment.destroy
-    redirect_to equipments_url, notice: 'Equipamento apagado com sucesso.'
+    redirect_to equipments_url, notice: t('.destroy')
   end
 
   private
