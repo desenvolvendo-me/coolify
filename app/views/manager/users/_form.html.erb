@@ -1,0 +1,37 @@
+<%= form_with(model: [:manager, @user], local: true) do |form| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "erro") %> impediu que este usuário fosse salvo:</h2>
+
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.email_field :email, id: :user_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password, id: :user_password %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation, id: :user_password_confirmation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :role %>
+    <%= form.select :role, User.roles.keys.map { |role| [role.titleize, role] }, include_blank: true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

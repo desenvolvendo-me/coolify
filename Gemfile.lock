@@ -139,9 +139,6 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise_invitable (2.0.9)
-      actionmailer (>= 5.0)
-      devise (>= 4.6)
     diff-lcs (1.5.0)
     docile (1.4.0)
     erubi (1.12.0)
@@ -504,7 +501,6 @@ DEPENDENCIES
   cpf_faker
   database_cleaner
   devise
-  devise_invitable (~> 2.0.0)
   factory_bot_rails
   ffaker
   foreman

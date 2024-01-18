@@ -42,7 +42,9 @@
             <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"><%= t('views.layouts.internal.settings') %></a>
           </li>
           <li>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"><%= t('views.layouts.internal.sign_out') %></a>
+            <% if user_signed_in? %>
+              <%= link_to t('views.layouts.internal.sign_out'), destroy_user_session_path, data: { turbo_method: :delete }, class: 'block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white' %>
+            <% end %>
           </li>
         </ul>
       </div>
@@ -104,8 +106,36 @@
         </ul>
       </li>
       <li>
-
+        <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example" data-collapse-toggle="dropdown-gestao">
+          <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 25">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <g id="moon-phase-7" transform="translate(-2 -2)">
+                <path id="secondary" fill="#2ca9bc" d="M21,12a9,9,0,0,1-9,9V3a9,9,0,0,1,9,9Z"></path>
+                <circle id="primary" cx="9" cy="9" r="9" transform="translate(3 3)" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle>
+                <path id="primary-2" data-name="primary" d="M21,12a9,9,0,0,1-9,9V3a9,9,0,0,1,9,9Z" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+              </g>
+            </g>
+          </svg>
+          <span class="flex-1 ml-3 text-left whitespace-nowrap">Gestão</span>
+          <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+          </svg>
+        </button>
+        <ul id="dropdown-gestao" class="hidden py-2 space-y-2">
+          <li>
+            <%= link_to manager_users_path, class: "flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" do %>
+              <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+                <path id="secondary" d="M18.7,19.38A1,1,0,0,1,17.92,21H6.08a1,1,0,0,1-.78-1.62L12,11Z" style="fill: #2ca9bc; stroke-width: 2;"></path>
+                <path id="primary" d="M12,11V3m6,1H12V8h6L17,6Zm-6,7L5.3,19.38A1,1,0,0,0,6.08,21H17.92a1,1,0,0,0,.78-1.62Z" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path>
+              </svg>
+              <span class="flex-1 ml-3 whitespace-nowrap"><%= 'Usuários' %></span>
+            <% end %>
+          </li>
+        </ul>
       </li>
+
     </ul>
   </div>
 </aside>

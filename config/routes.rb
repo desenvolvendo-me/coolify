@@ -1,13 +1,15 @@
 require 'sidekiq/web'
 Rails.application.routes.draw do
-  devise_for :users
   mount Sidekiq::Web => '/sidekiq'
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   mount Rswag::Ui::Engine => '/api-docs'
   mount Rswag::Api::Engine => '/api-docs'
   devise_for :admin_users,
              ActiveAdmin::Devise.config
+  devise_for :users
   ActiveAdmin.routes(self)
+
+  root to: 'external/home#index'
 
   namespace :api do
     namespace :goals do
@@ -20,6 +22,7 @@ Rails.application.routes.draw do
   end
 
   namespace :manager do
+    resources :users
     resources :goals
     namespace :goals do
       namespace :done do

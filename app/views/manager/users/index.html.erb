@@ -1,0 +1,27 @@
+<h1>Usuários</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Email</th>
+    <th>Função</th>
+    <th>Ações</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.email %></td>
+      <td><%= user.role %></td>
+      <td>
+        <%= link_to 'Visualizar', manager_user_path(user) %>
+        <%= link_to 'Editar', edit_manager_user_path(user) %>
+        <%= link_to 'Excluir', manager_user_path(user), method: :delete, data: { confirm: 'Tem certeza?' } %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Adicionar Novo Usuário', new_manager_user_path %>
