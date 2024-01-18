@@ -1,0 +1,25 @@
+pt-BR:
+  manager:
+    clients:
+      client:
+        show: 'Mostrar'
+        edit: 'Editar'
+        delete: 'Apagar'
+        delete_confirm: 'Você tem certeza?'
+      edit:
+        title: 'Editando cliente'
+        show: 'Mostrar'
+        go_back: 'Voltar'
+      index:
+        register_client: 'Cadastrar cliente'
+        name: 'Nome'
+      new:
+        title: 'Cadastrando cliente'
+        go_back: 'Voltar'
+      show:
+        title: 'Detalhes do cliente'
+        go_back: 'Voltar'
+        edit: 'Editar'
+        delete: 'Apagar'
+        delete_confirm: 'Você tem certeza?'
+

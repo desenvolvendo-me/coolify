@@ -20,7 +20,7 @@ module Manager
 
       if @client.save
         redirect_to manager_client_path(@client),
-                    notice: 'Cliente cadastrado com sucesso.'
+                    notice: t('.success')
       else
         render :new,
                status: :unprocessable_entity
@@ -30,7 +30,7 @@ module Manager
     def update
       if @client.update(client_params)
         redirect_to manager_client_path(@client),
-                    notice: 'Cliente atualizado com sucesso.'
+                    notice: t('.success')
       else
         render :edit,
                status: :unprocessable_entity
@@ -41,7 +41,7 @@ module Manager
       @client.destroy
 
       redirect_to manager_clients_path,
-                  notice: 'Cliente apagado com sucesso.'
+                  notice: t('.success')
     end
 
     private
