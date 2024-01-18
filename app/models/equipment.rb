@@ -8,4 +8,5 @@
 #  updated_at :datetime         not null
 #
 class Equipment < ApplicationRecord
+  validates :tag, presence: true
 end
