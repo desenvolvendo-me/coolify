@@ -9,6 +9,6 @@
 #
 FactoryBot.define do
   factory :client do
-    name { "MyString" }
+    name { FFaker::Name.name }
   end
 end
