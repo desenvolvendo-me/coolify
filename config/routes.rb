@@ -31,6 +31,8 @@ Rails.application.routes.draw do
     get '', to: 'home#index', as: :home
   end
 
+  resources :maintenances
+
   scope module: :external do
     get '', to: 'home#index', as: :home
     get 'stimulus', to: 'home#stimulus', as: :stimulus
