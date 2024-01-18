@@ -1,6 +1,8 @@
 if Rails.env.development?
   AdminUser.create!(email: 'admin@mail.com',
                     password: 'password', password_confirmation: 'password')
+  User.create!(email: 'admin@limpar.com',
+                    password: 'password', password_confirmation: 'password')
   goal1 = Goal.create(name: 'Aprender Linguagem Ruby',
                       description: 'Quero criar 10 algoritmos em até 3 meses', status: 'done')
   Task.create(name: '1ª agoritmo', description: 'Criar o algoritmo bubble sort',
