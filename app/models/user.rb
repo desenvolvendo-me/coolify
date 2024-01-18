@@ -3,8 +3,10 @@
 # Table name: users
 #
 #  id                     :bigint           not null, primary key
+#  avatar                 :string
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
+#  name                   :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
@@ -22,6 +24,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_one_attached :avatar
+
+  validates :name, presence: true
 
   enum role: { admin: 'admin', employee: 'employee' }
 end

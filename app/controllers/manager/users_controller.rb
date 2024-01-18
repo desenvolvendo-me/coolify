@@ -5,7 +5,7 @@ module Manager
     before_action :set_user, only: [:show, :edit, :update, :destroy]
 
     def index
-      @users = User.all
+      @users = User.employee
     end
 
     def show; end

@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   mount Rswag::Api::Engine => '/api-docs'
   devise_for :admin_users,
              ActiveAdmin::Devise.config
-  devise_for :users
+  devise_for :users, {
+    sessions: 'users/sessions'
+  }
+
   ActiveAdmin.routes(self)
 
   root to: 'external/home#index'
