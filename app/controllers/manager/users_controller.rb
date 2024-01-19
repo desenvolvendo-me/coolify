@@ -29,9 +29,15 @@ module Manager
     def edit; end
 
     def update
-      if @user.update(user_params)
+      if user_params[:password].blank? && user_params[:password_confirmation].blank?
+        @user.update_without_password(user_params)
+      else
+        @user.update_with_password(user_params)
+      end
+
+      if @user.valid?
         redirect_to manager_user_path(@user),
-                    notice: 'Usuário atualizado com sucesso.'
+                    notice: t('.update')
       else
         render :edit
       end
@@ -53,7 +59,7 @@ module Manager
     end
 
     def user_params
-      params.require(:user).permit(:name, :email, :password,
+      params.require(:user).permit(:name, :avatar, :email, :password,
                                    :password_confirmation, :role)
     end
   end
