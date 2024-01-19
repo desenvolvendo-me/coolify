@@ -77,10 +77,10 @@ if Rails.env.development?
               status: "done", goal: goal15)
 
   # Creates Equipment
-  Equipment.create(tag: '001')
-  Equipment.create(tag: '002')
+  Equipment.create(tag: 'S2AR-013')
+  Equipment.create(tag: 'RAR-001')
   Equipment.create(tag: '003')
-  Equipment.create(tag: '004')
+  Equipment.create(tag: 'MAR-003A')
   Equipment.create(tag: '005')
 
 end
