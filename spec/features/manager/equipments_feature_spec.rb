@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Equipments', type: :feature do
+RSpec.feature 'Manager Equipments', type: :feature do
   before do
     @tag1 = 'AAR-008-LB'
     @tag2 = 'MAR-004-B'
