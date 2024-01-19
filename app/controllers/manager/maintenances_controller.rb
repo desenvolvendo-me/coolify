@@ -14,14 +14,12 @@ module Manager
       @maintenance = Maintenance.new
     end
 
-    def edit; end
-
     def create
       @maintenance = Maintenance.new(maintenance_params)
       respond_to do |format|
         if @maintenance.save
           format.html do
-            redirect_to maintenance_path(@maintenance),
+            redirect_to manager_maintenance_path(@maintenance),
                         notice: 'Manutenção cadastrada com sucesso'
           end
         else
@@ -33,11 +31,13 @@ module Manager
       end
     end
 
+    def edit; end
+
     def update
       respond_to do |format|
         if @maintenance.update(maintenance_params)
           format.html do
-            redirect_to maintenance_path(@maintenance),
+            redirect_to manager_maintenance_path(@maintenance),
                         notice: 'Manutenção atualizada com sucesso'
           end
         else
@@ -53,7 +53,7 @@ module Manager
       @maintenance.destroy
       respond_to do |format|
         format.html do
-          redirect_to maintenances_path,
+          redirect_to manager_maintenances_path,
                       notice: 'Manutenção apagada com sucesso'
         end
       end
