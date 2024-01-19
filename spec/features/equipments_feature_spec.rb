@@ -9,51 +9,51 @@ RSpec.feature 'Equipments', type: :feature do
   end
 
   scenario 'list equipments' do
-    visit equipments_path
+    visit manager_equipments_path
 
     expect(page).to have_text(@tag1)
     expect(page).to have_text(@tag2)
   end
 
   scenario 'create equipment' do
-    visit new_equipment_path
+    visit new_manager_equipment_path
 
     @tag3 = 'AAR-021'
     find(:xpath, '//*[@id="equipment_tag"]').set(@tag3)
-    click_button I18n.t('equipments.new.save')
+    click_button I18n.t('manager.equipments.new.save')
 
     expect(page).to have_text(@tag3)
   end
 
   scenario 'show equipment' do
-    visit equipments_path(Equipment.first)
+    visit manager_equipments_path(Equipment.first)
 
     expect(page).to have_text(@tag1)
   end
 
   scenario 'update goal' do
-    visit equipment_path(Equipment.last)
-    click_link I18n.t('equipments.show.edit')
+    visit manager_equipment_path(Equipment.last)
+    click_link I18n.t('manager.equipments.show.edit')
 
     fill_in 'equipment_tag', with: 'CAAR-008'
-    click_button I18n.t('equipments.edit.save')
+    click_button I18n.t('manager.equipments.edit.save')
 
     expect(page).to have_text('CAAR-008')
   end
 
   scenario 'delete goal on view show' do
-    visit equipment_path(Equipment.first)
-    click_link I18n.t('equipments.show.delete')
+    visit manager_equipment_path(Equipment.first)
+    click_link I18n.t('manager.equipments.show.delete')
 
-    page.accept_alert I18n.t('equipments.show.delete_confirm')
+    page.accept_alert I18n.t('manager.equipments.show.delete_confirm')
     expect(page).not_to have_text(@tag1)
   end
 
   scenario 'delete goal on view index' do
-    visit equipments_path
+    visit manager_equipments_path
 
     click_button "#{Equipment.first.id}-dropdown-button"
-    click_link I18n.t('equipments.equipment.delete')
+    click_link I18n.t('manager.equipments.equipment.delete')
     page.accept_alert I18n.t('views.manager.goals.delete_confirm')
 
     expect(page).to have_text(@tag2)

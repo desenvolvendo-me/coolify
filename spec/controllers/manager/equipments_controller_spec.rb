@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe EquipmentsController, type: :controller do
+RSpec.describe Manager::EquipmentsController, type: :controller do
   let(:equipment) { create(:equipment) }
   let(:valid_attributes) { { tag: '001' } }
   let(:invalid_attributes) { { tag: '' } }
@@ -57,7 +57,7 @@ RSpec.describe EquipmentsController, type: :controller do
 
       it 'redirects to the created equipment' do
         post :create, params: { equipment: valid_attributes }
-        expect(response).to redirect_to(equipment_path(Equipment.last))
+        expect(response).to redirect_to(manager_equipment_path(Equipment.last))
       end
     end
 
@@ -79,7 +79,7 @@ RSpec.describe EquipmentsController, type: :controller do
 
       it 'redirects to the equipment' do
         put :update, params: { id: equipment.id, equipment: valid_attributes }
-        expect(response).to redirect_to(equipment_path(equipment))
+        expect(response).to redirect_to(manager_equipment_path(equipment))
       end
     end
 
@@ -101,7 +101,7 @@ RSpec.describe EquipmentsController, type: :controller do
 
     it 'redirects to the equipments list' do
       delete :destroy, params: { id: equipment.id }
-      expect(response).to redirect_to(equipments_path)
+      expect(response).to redirect_to(manager_equipments_path)
     end
   end
 end
