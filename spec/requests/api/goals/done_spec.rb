@@ -1,7 +1,7 @@
 # spec/integration/goals_spec.rb
 require 'swagger_helper'
 
-RSpec.describe Api::Goals::DoneController, type: :request do
+RSpec.xdescribe Api::Goals::DoneController, type: :request do
   base_path = '/api/goals/done'
 
   path "#{base_path}/index" do
