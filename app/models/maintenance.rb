@@ -8,4 +8,5 @@
 #  updated_at :datetime         not null
 #
 class Maintenance < ApplicationRecord
+  validates :date, presence: true
 end
