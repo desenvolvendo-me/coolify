@@ -48,4 +48,3 @@ class EquipmentsController < ApplicationController
     params.require(:equipment).permit(:tag)
   end
 end
-
