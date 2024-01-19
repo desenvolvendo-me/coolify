@@ -8,6 +8,8 @@ Bundler.require(*Rails.groups)
 
 module StartupMissionBaseRails
   class Application < Rails::Application
+    default_url_options[:host] = ENV["HOST"] || 'localhost:3000'
+
     config.active_job.queue_adapter = :sidekiq
 
     # Initialize configuration defaults for originally generated Rails version.
