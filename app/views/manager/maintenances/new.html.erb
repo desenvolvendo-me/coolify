@@ -5,9 +5,9 @@
                               nested_form_wrapper_selector_value: '.nested-form-wrapper'
                             } } do |form| %>
   <div class="flex justify-between items-center mb-4">
-    <h1 class="font-bold text-4xl"><%= 'Criando manutenção' %></h1>
+    <h1 class="font-bold text-4xl"><%= t('.title') %></h1>
     <div>
-      <%= form.button :submit, 'Salvar', class: 'cursor-pointer' %>
+      <%= form.button :submit, t('.save'), class: 'cursor-pointer' %>
     </div>
   </div>
   <%= render "form", maintenance: @maintenance, form: form %>

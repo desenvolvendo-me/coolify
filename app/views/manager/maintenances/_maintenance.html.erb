@@ -10,15 +10,15 @@
       <% if action_name != "show" %>
         <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="<%= maintenance.id %>-dropdown-button">
           <li>
-            <%= link_to 'Mostrar', manager_maintenance_path(maintenance), class: "block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" %>
+            <%= link_to t('.show'), manager_maintenance_path(maintenance), class: "block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" %>
           </li>
           <li>
-            <%= link_to 'editar', edit_manager_maintenance_path(maintenance), class: "block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" %>
+            <%= link_to t('.edit'), edit_manager_maintenance_path(maintenance), class: "block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" %>
           </li>
         </ul>
         <div class="py-1">
-          <%= link_to 'apagar', manager_maintenance_path(maintenance),
-                      data: { turbo_method: :delete, turbo_confirm: 'tem certeza?' }, class: "block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white" %>
+          <%= link_to t('.delete'), manager_maintenance_path(maintenance),
+                      data: { turbo_method: :delete, turbo_confirm: t('.delete_confirm') }, class: "block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white" %>
         </div>
       <% end %>
     </div>

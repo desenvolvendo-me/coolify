@@ -20,7 +20,7 @@ module Manager
         if @maintenance.save
           format.html do
             redirect_to manager_maintenance_path(@maintenance),
-                        notice: 'Manutenção cadastrada com sucesso'
+                        notice: t('.create')
           end
         else
           format.html do
@@ -38,7 +38,7 @@ module Manager
         if @maintenance.update(maintenance_params)
           format.html do
             redirect_to manager_maintenance_path(@maintenance),
-                        notice: 'Manutenção atualizada com sucesso'
+                        notice: t('.update')
           end
         else
           format.html do
@@ -54,7 +54,7 @@ module Manager
       respond_to do |format|
         format.html do
           redirect_to manager_maintenances_path,
-                      notice: 'Manutenção apagada com sucesso'
+                      notice: t('.destroy')
         end
       end
     end
