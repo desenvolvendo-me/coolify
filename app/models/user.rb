@@ -30,4 +30,12 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   enum role: { admin: 'admin', employee: 'employee' }
+
+  before_create :set_default_role
+
+  private
+
+  def set_default_role
+    self.role ||= :admin
+  end
 end
