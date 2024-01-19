@@ -1,5 +1,14 @@
-<h1>Adicionar Novo Usuário</h1>
-
-<%= render 'form', user: @user %>
-
-<%= link_to 'Voltar', manager_users_path %>
+<%= simple_form_for @user, url: manager_users_path,
+                    html: { class: 'relative',
+                            data: {
+                              controller: 'nested-form',
+                              nested_form_wrapper_selector_value: '.nested-form-wrapper'
+                            } } do |form| %>
+  <div class="flex justify-between items-center mb-4">
+    <h1 class="font-bold text-4xl"><%= t('.title') %></h1>
+    <div>
+      <%= form.button :submit, t('.save'), class: 'cursor-pointer' %>
+    </div>
+  </div>
+  <%= render "form", user: @user, form: form %>
+<% end %>

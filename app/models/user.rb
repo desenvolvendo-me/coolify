@@ -31,6 +31,10 @@ class User < ApplicationRecord
 
   before_create :set_default_role
 
+  def to_s
+    name
+  end
+
   private
 
   def set_default_role

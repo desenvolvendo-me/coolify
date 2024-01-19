@@ -5,7 +5,9 @@ module Manager
     before_action :set_user, only: %i[show edit update destroy]
 
     def index
-      @users = User.employee
+      @q = User.where.not(id: current_user).ransack(params[:q])
+      @users = @q.result(distinct: true)
+      @users = @users.order('created_at').page(params[:page]).per(4)
     end
 
     def show; end
@@ -18,7 +20,7 @@ module Manager
       @user = User.new(user_params)
       if @user.save
         redirect_to manager_user_path(@user),
-                    notice: 'Usuário criado com sucesso.'
+                    notice: t('.create')
       else
         render :new
       end
@@ -37,7 +39,7 @@ module Manager
 
     def destroy
       @user.destroy
-      redirect_to manager_users_url, notice: 'Usuário excluído com sucesso.'
+      redirect_to manager_users_url, notice: t('.destroy')
     end
 
     private
@@ -47,7 +49,7 @@ module Manager
     end
 
     def check_admin
-      redirect_to(root_url, notice: 'Não autorizado') unless current_user.admin?
+      redirect_to(root_url, notice: t('.check_admin')) unless current_user.admin?
     end
 
     def user_params

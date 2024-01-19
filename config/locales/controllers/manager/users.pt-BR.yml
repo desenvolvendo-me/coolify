@@ -1,0 +1,7 @@
+pt-BR:
+  manager:
+    users:
+      create: 'Usuário cadastrado com sucesso.'
+      update: 'Usuário atualizado com sucesso.'
+      destroy: 'Usuário apagado com sucesso.'
+      check_admin: 'Usuário não autorizado.'

@@ -1,47 +1,16 @@
-<%= form_with(model: [:manager, @user], local: true) do |form| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "erro") %> impediu que este usuário fosse salvo:</h2>
-
-      <ul>
-        <% @user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :avatar %><br/>
-    <%= form.file_field :avatar %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.email_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation %>
-  </div>
-
-  <div class="field">
-    <%= form.label :role %>
+<div class="flex">
+  <%= form.input :avatar, placeholder: ' ' %>
+</div>
+<div class="flex flex-col">
+  <div class="flex">
+    <%= form.input :name, placeholder: ' ' %>
+    <%= form.input :email, placeholder: ' ' %>
     <%= form.select :role, User.roles.keys.map { |role| [role.titleize, role] }, include_blank: true %>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
+</div>
+<div class="flex flex-col">
+  <div class="flex">
+    <%= form.input :password, placeholder: ' ' %>
+    <%= form.input :password_confirmation, placeholder: ' ' %>
   </div>
-<% end %>
+</div>
