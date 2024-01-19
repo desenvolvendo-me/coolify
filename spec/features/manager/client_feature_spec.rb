@@ -18,7 +18,6 @@ RSpec.feature 'Manager Client', type: :feature do
     expect(page).to have_text(client_2_name)
   end
 
-
   scenario 'create client' do
     visit new_manager_client_path
 

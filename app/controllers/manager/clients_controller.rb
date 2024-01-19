@@ -1,5 +1,4 @@
 module Manager
-
   class ClientsController < InternalController
     before_action :set_client, only: %i[show edit update destroy]
 
