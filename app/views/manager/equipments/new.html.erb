@@ -1,4 +1,4 @@
-<%= simple_form_for @equipment, url: equipments_path,
+<%= simple_form_for @equipment, url: manager_equipments_path,
                     html: { class: 'relative',
                             data: {
                               controller: 'nested-form',
@@ -8,7 +8,7 @@
     <h1 class="font-bold text-4xl"><%= t('.title') %></h1>
     <div>
       <%= form.button :submit, t('.save'), class: 'cursor-pointer' %>
-      <%= link_to t('.back'), equipments_path, method: :get, class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" %>
+      <%= link_to t('.back'), manager_equipments_path, method: :get, class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" %>
     </div>
   </div>
   <%= render "form", equipment: @equipment, form: form %>

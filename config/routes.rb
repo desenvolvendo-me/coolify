@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   end
 
   namespace :manager do
+    resources :equipments
     resources :maintenances
     resources :goals
     namespace :goals do
@@ -31,8 +32,6 @@ Rails.application.routes.draw do
 
     get '', to: 'home#index', as: :home
   end
-
-  resources :equipments
 
   scope module: :external do
     get '', to: 'home#index', as: :home
