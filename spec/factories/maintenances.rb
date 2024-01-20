@@ -1,3 +1,12 @@
+# == Schema Information
+#
+# Table name: maintenances
+#
+#  id         :bigint           not null, primary key
+#  date       :date
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 # spec/factories/maintenances.rb
 FactoryBot.define do
   factory :maintenance do
