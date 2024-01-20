@@ -4,6 +4,7 @@ pt-BR:
       index:
         search: 'Pesquisar'
         add_equipment: "Cadastrar equipamento"
+        filter_by: 'Filtrar'
         actions: 'Ações'
         pages:
           showing: 'Mostrando'
