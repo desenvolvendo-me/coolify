@@ -15,8 +15,10 @@ RSpec.describe Manager::MaintenancesController, type: :controller do
   describe 'GET #index with search' do
     it 'returns the maintenances searched correctly' do
       # DADO
-      maintenance1 = create(:maintenance, date: Date.strptime('31-01-2024', '%d-%m-%Y'))
-      maintenance2 = create(:maintenance, date: Date.strptime('01-02-2024', '%d-%m-%Y'))
+      maintenance1 = create(:maintenance,
+                            date: Date.strptime('31-01-2024', '%d-%m-%Y'))
+      maintenance2 = create(:maintenance,
+                            date: Date.strptime('01-02-2024', '%d-%m-%Y'))
 
       # QUANDO
       get :index,
