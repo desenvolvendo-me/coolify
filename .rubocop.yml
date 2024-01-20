@@ -38,7 +38,7 @@ Metrics/BlockLength:
 # Costumamos usar o padrão do RuboCop, mas caso queira alterar o tamanho de
 # caracteres de uma linha, você pode fazê-lo aqui
 Metrics/LineLength:
-  Max: 80
+  Max: 120
 
 Metrics/MethodLength:
   Max: 20

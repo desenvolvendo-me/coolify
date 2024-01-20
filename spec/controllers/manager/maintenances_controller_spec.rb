@@ -83,8 +83,7 @@ RSpec.describe Manager::MaintenancesController, type: :controller do
 
       it 'redirects to the created maintenance' do
         post :create, params: { maintenance: valid_attributes }
-        expect(response).to
-        redirect_to(manager_maintenance_path(Maintenance.last))
+        expect(response).to redirect_to(manager_maintenance_path(Maintenance.last))
       end
     end
 
