@@ -31,7 +31,7 @@ RSpec.feature 'Manager Equipments', type: :feature do
     expect(page).to have_text(@tag1)
   end
 
-  scenario 'update goal' do
+  scenario 'update equipment' do
     visit manager_equipment_path(Equipment.last)
     click_link I18n.t('manager.equipments.show.edit')
 
@@ -41,7 +41,7 @@ RSpec.feature 'Manager Equipments', type: :feature do
     expect(page).to have_text('CAAR-008')
   end
 
-  scenario 'delete goal on view show' do
+  scenario 'delete equipment on view show' do
     visit manager_equipment_path(Equipment.first)
     click_link I18n.t('manager.equipments.show.delete')
 
@@ -49,7 +49,7 @@ RSpec.feature 'Manager Equipments', type: :feature do
     expect(page).not_to have_text(@tag1)
   end
 
-  scenario 'delete goal on view index' do
+  scenario 'delete equipment on view index' do
     visit manager_equipments_path
 
     click_button "#{Equipment.first.id}-dropdown-button"
