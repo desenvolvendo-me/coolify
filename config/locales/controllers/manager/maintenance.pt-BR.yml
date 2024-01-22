@@ -1,0 +1,6 @@
+pt-BR:
+  manager:
+    maintenances:
+      create: 'Manutenção cadastrada com sucesso.'
+      update: 'Manutenção atualizada com sucesso.'
+      destroy: 'Manutenção apagada com sucesso.'

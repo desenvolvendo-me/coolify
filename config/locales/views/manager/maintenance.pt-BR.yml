@@ -1,0 +1,32 @@
+pt-BR:
+  manager:
+    maintenances:
+      index:
+        search: 'Pesquisar'
+        add_maintenance: "Criar manutenção"
+        date: 'Data'
+        actions: "Ações"
+        pages:
+          showing: 'Mostrando'
+          of: 'de'
+        previous: 'anterior'
+        next: 'próximo'
+      maintenance:
+        show: 'Mostrar'
+        edit: 'Editar'
+        delete: 'Apagar'
+        delete_confirm: 'Você tem certeza?'
+      show:
+        title: 'Detalhando manutenção'
+        back: 'Voltar'
+        edit: 'Editar'
+        delete: 'Apagar'
+        delete_confirm: 'Você tem certeza?'
+      new:
+        title: 'Cadastrando manutenção'
+        save: 'Salvar'
+      edit:
+        title: 'Editando manutenção'
+        save: 'Salvar'
+        show: 'Mostrar'
+        back: 'Voltar'
