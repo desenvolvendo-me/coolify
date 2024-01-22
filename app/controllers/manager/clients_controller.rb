@@ -3,7 +3,9 @@ module Manager
     before_action :set_client, only: %i[show edit update destroy]
 
     def index
-      @clients = Client.all
+      @q = Client.ransack(params[:q])
+      @clients = @q.result(distinct: true)
+      @clients = @clients.order('created_at').page(params[:page]).per(4)
     end
 
     def show; end
