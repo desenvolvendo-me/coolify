@@ -18,7 +18,9 @@ module Manager
 
     def create
       @user = User.new(user_params)
-      if @user.save
+      @user.confirm
+      if @user.save(validate: false)
+        @user.send_reset_password_instructions
         redirect_to manager_user_path(@user),
                     notice: t('.create')
       else

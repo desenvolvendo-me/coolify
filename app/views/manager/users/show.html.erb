@@ -10,7 +10,9 @@
 
   <div class="flex">
     <div class="relative z-0 w-full mb-6 group mt-4">
-      <%= image_tag @user.avatar.variant(resize_to_limit: [100, 100]), alt: @user.name, class: "rounded-lg" %>
+      <% if @user.avatar.attached? %>
+        <%= image_tag(@user.avatar.variant(resize_to_limit: [100, 100]), alt: @user.name, class: "rounded-lg") %>
+      <% end %>
     </div>
   </div>
 

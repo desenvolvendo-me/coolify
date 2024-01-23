@@ -2,7 +2,11 @@
   <td class="px-4 py-3">
     <input type="checkbox" id="<%= convert_to_id(user) %>-checkbox" data-users--index-target="checkbox" value="<%= user.id %>">
   </td>
-  <td class="px-4 py-3"> <%= image_tag user.avatar.variant(resize_to_limit: [50, 50]), alt: user.name, class: "rounded-lg" %></td>
+  <td class="px-4 py-3">
+    <% if user.avatar.attached? %>
+      <%= image_tag(user.avatar.variant(resize_to_limit: [50, 50]), alt: user.name, class: "rounded-lg") %>
+    <% end %>
+  </td>
   <td class="px-4 py-3"> <%= user.name %></td>
   <td class="px-4 py-3"> <%= user.email %></td>
   <td class="px-4 py-3"> <%= I18n.t("enum.roles.#{user.role}") %></td>

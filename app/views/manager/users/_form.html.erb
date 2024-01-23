@@ -1,16 +1,7 @@
-<div class="flex">
-  <%= form.input :avatar, placeholder: ' ' %>
-</div>
 <div class="flex flex-col">
   <div class="flex">
     <%= form.input :name, placeholder: ' ' %>
     <%= form.input :email, placeholder: ' ' %>
     <%= form.select :role, User.roles.keys.map { |role| [role.titleize, role] }, include_blank: true %>
-  </div>
-</div>
-<div class="flex flex-col">
-  <div class="flex">
-    <%= form.input :password, placeholder: ' ' %>
-    <%= form.input :password_confirmation, placeholder: ' ' %>
   </div>
 </div>
