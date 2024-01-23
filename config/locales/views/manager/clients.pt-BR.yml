@@ -11,8 +11,10 @@ pt-BR:
         show: 'Mostrar'
         go_back: 'Voltar'
       index:
+        title: 'Clientes'
         register_client: 'Cadastrar cliente'
         name: 'Nome'
+        actions: 'Ações'
       new:
         title: 'Cadastrando cliente'
         go_back: 'Voltar'

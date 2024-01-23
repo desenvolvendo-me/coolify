@@ -2,6 +2,7 @@ pt-BR:
   manager:
     equipments:
       index:
+        title: 'Equipamentos'
         search: 'Pesquisar'
         add_equipment: "Cadastrar equipamento"
         filter_by: 'Filtrar'

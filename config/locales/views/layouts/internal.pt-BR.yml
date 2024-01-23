@@ -8,5 +8,8 @@ pt-BR:
       dashboard: "Painel"
       goal: "Meta"
       new: "Novo"
-      maintenance: 'Manutenção'
+      maintenance: 'Manutenções'
+      equipment: 'Equipamentos'
+      clients: 'Clientes'
       add: 'Cadastrar'
+      generate_report: 'Gerar Laudo'
