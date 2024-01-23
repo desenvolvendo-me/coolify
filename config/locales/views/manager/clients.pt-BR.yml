@@ -12,6 +12,7 @@ pt-BR:
         go_back: 'Voltar'
       index:
         title: 'Clientes'
+        search: 'Pesquisar'
         register_client: 'Cadastrar cliente'
         name: 'Nome'
         actions: 'Ações'
