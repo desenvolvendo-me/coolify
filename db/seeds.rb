@@ -99,7 +99,7 @@ if Rails.env.development?
   Maintenance.create(date: Date.strptime('27/09/2023', '%d/%m/%Y'))
 
   # Client
-
-  Client.create(name: FFaker::NameBR.name)
-  Client.create(name: FFaker::NameBR.name)
+  5.times do
+    Client.create(name: FFaker::NameBR.name)
+  end
 end
