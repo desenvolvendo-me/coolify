@@ -1,0 +1,17 @@
+pt-BR:
+  activerecord:
+    errors:
+      models:
+        maintenance:
+          attributes:
+            date:
+              blank: 'nao pode ficar em branco'
+    models:
+      maintenance:
+        one: 'Manutenção'
+        other: 'Manutenções'
+    attributes:
+      maintenance:
+        date: 'Data'
+        created_at: 'Criado em'
+        updated_at: 'Atualizado em'

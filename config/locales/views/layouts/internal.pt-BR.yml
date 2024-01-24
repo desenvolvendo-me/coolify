@@ -1,11 +1,12 @@
 pt-BR:
-  views:
-    layouts:
-      internal:
-        sr-only:
-          open_menu: "Abrir menu principal"
-        settings: "Configurações"
-        sign_out: "Sair da conta"
-        dashboard: "Painel"
-        goal: "Meta"
-        new: "Novo"
+  layouts:
+    internal:
+      sr-only:
+        open_menu: "Abrir menu principal"
+      settings: "Configurações"
+      sign_out: "Sair da conta"
+      dashboard: "Painel"
+      goal: "Meta"
+      new: "Novo"
+      maintenance: 'Manutenção'
+      add: 'Cadastrar'
