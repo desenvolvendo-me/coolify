@@ -2,17 +2,24 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.fields_for :company, resource.build_company do |company_form| %>
+      <%= company_form.label :cnpj %><br/>
+      <%= company_form.text_field :cnpj %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %><br/>
     <%= f.text_field :name, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :avatar %><br />
+    <%= f.label :avatar %><br/>
     <%= f.file_field :avatar %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %><br/>
     <%= f.email_field :email, autofocus: true %>
   </div>
 
@@ -20,12 +27,12 @@
     <%= f.label :password %>
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> caracteres mínimo)</em>
-    <% end %><br />
+    <% end %><br/>
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation %><br/>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
