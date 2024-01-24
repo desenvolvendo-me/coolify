@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@tailwindcss/container-queries": "^0.1.1",
     "esbuild": "^0.19.4",
     "flowbite": "^1.8.1"
   }
