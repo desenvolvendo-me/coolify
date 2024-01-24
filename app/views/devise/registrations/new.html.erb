@@ -1,0 +1,44 @@
+<div class="flex flex-col p-5 sm:px-14">
+  <h1 class="font-bold text-3xl">Cadastre-se!</h1>
+  <div class="flex gap-1">
+    <span class="font-thin">Já possui uma conta?</span>
+    <%= link_to "Entrar", new_session_path(resource_name), class: '' %>
+  </div>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'mt-10' }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, class: 'rounded border-gray-300' %>
+  </div>
+
+  <div>
+    <%= f.label :avatar %><br />
+    <%= f.file_field :avatar, class: 'rounded border-gray-300' %>
+  </div>
+
+  <div>
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, class: 'rounded border-gray-300' %>
+  </div>
+
+  <div>
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> caracteres mínimo)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off", class: 'rounded border-gray-300' %>
+  </div>
+
+  <div>
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: 'rounded border-gray-300' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>

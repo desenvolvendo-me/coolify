@@ -1,0 +1,35 @@
+pt-BR:
+  manager:
+    users:
+      index:
+        search: 'Pesquisar'
+        add_user: "Cadastrar usuário"
+        filter: 'Filtrar'
+        filter_1: 'Administradores'
+        filter_2: 'Funcionários'
+        actions: 'Ações'
+        pages:
+          showing: 'Mostrando'
+          of: 'de'
+        previous: 'anterior'
+        next: 'próximo'
+      new:
+        title: 'Cadastrando usuário'
+        back: 'Voltar'
+        save: 'Salvar'
+      edit:
+        title: 'Editando usuário'
+        save: 'Salvar'
+        show: 'Mostrar'
+      show:
+        title: 'Detalhando usuário'
+        edit: 'Editar'
+        back: 'Voltar'
+        save: 'Salvar'
+        delete: 'Apagar'
+        delete_confirm: 'Você tem certeza?'
+      user:
+        show: 'Mostrar'
+        edit: 'Editar'
+        delete: 'Apagar'
+        delete_confirm: 'Você tem certeza?'

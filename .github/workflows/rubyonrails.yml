@@ -1,10 +1,10 @@
 name: "Ruby on Rails CI"
-#on: push
-on:
-  pull_request:
-    branches:
-      - main
-      - 'release/*'
+on: push
+#on:
+#  pull_request:
+#    branches:
+#      - main
+#      - 'release/*'
 jobs:
   Test:
     runs-on: ubuntu-latest

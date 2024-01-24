@@ -9,6 +9,7 @@ gem 'activeadmin', '~> 2.14'
 gem 'bootsnap', require: false
 gem 'chartkick', '~> 3.3.0'
 gem 'devise'
+gem 'image_processing', '>= 1.2'
 gem 'foreman'
 gem 'groupdate'
 gem 'importmap-rails'
@@ -30,13 +31,13 @@ gem 'turbo-rails'
 gem 'tzinfo-data',
     platforms: %i[mingw mswin x64_mingw jruby]
 gem 'yaml'
+gem 'json', '2.7.1'
 
 group :development, :test do
   gem 'annotate'
   gem 'binding_of_caller'
   gem 'cpf_faker'
   gem 'database_cleaner'
-  # gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
   gem 'ffaker'
   gem 'json_matchers'

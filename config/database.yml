@@ -9,12 +9,12 @@ default: &default
 
 development:
   <<: *default
-  database: startup_mission_development
+  database: coolify_development
 
 test:
   <<: *default
-  database: startup_mission_test
+  database: coolify_test
 
 production:
   <<: *default
-  database: startup_mission_production
+  database: coolify_production

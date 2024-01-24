@@ -1,6 +1,13 @@
 if Rails.env.development?
   AdminUser.create!(email: 'admin@mail.com',
                     password: 'password', password_confirmation: 'password')
+  user_admin = User.create!(name: 'Administrador', email: 'admin@limpar.com',
+                            password: '000000', password_confirmation: '000000', role: :admin, confirmed_at: DateTime.now)
+  user_employee = User.create!(name: 'Funcionário', email: 'employee@limpar.com',
+                               password: '000000', password_confirmation: '000000', role: :employee, confirmed_at: DateTime.now)
+  user_admin.avatar.attach(io: File.open(Rails.root.join('spec', 'support', 'images', 'avatar-1.jpg')), filename: 'avatar-1', content_type: 'image/jpg')
+  user_employee.avatar.attach(io: File.open(Rails.root.join('spec', 'support', 'images', 'avatar-2.jpg')), filename: 'avatar-2', content_type: 'image/jpg')
+
   goal1 = Goal.create(name: 'Aprender Linguagem Ruby',
                       description: 'Quero criar 10 algoritmos em até 3 meses', status: 'done')
   Task.create(name: '1ª agoritmo', description: 'Criar o algoritmo bubble sort',

@@ -1,22 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>StartupMissionBaseRails</title>
+    <title>Coolify</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= favicon_link_tag "coolify-favicon-color.png"%>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "tailwind.css", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.turbo.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.turbo.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
+  <body class="h-dvh flex flex-col">
+    <main>
+      <% if devise_page? %>
+        <div class="flex flex-col justify-center h-full">
+          <div class="flex flex-col p-5 sm:px-14 bg-gradient-to-r from-teal-300 to-blue-900 h-52 mb-10">
+            <div class="w-36 md:flex mb-5">
+              <%= image_tag('coolify-logo-cian.png', alt: "Coolify Logo", class: 'w-full') %>
+            </div>
+            <div class="max-h-40 max-w-40 rounded-md overflow-hidden shrink-0 shadow-lg">
+              <%= image_tag('snowball_cover_retangle.png', alt: "Snow ball square", class: 'w-full h-full object-cover object-center') %>
+            </div>
+          </div>
+          <%= yield %>
+        </div>
+      <% else %>
+        <%= yield %>
+      <% end %>
     </main>
   </body>
 </html>

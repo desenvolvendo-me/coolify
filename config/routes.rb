@@ -6,7 +6,13 @@ Rails.application.routes.draw do
   mount Rswag::Api::Engine => '/api-docs'
   devise_for :admin_users,
              ActiveAdmin::Devise.config
+  devise_for :users, {
+    sessions: 'users/sessions'
+  }
+
   ActiveAdmin.routes(self)
+
+  root to: 'external/home#index'
 
   namespace :api do
     namespace :goals do
@@ -19,6 +25,7 @@ Rails.application.routes.draw do
   end
 
   namespace :manager do
+    resources :users
     resources :equipments
     resources :maintenances
     resources :goals
