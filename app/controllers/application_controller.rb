@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   private
 
   def set_tenant
-    set_current_tenant(current_user.company)
+    set_current_tenant(current_user.company) if current_user
   end
 
   protected

@@ -74,6 +74,12 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_24_171201) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "equipment", force: :cascade do |t|
+    t.string "tag"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "goals", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -81,6 +87,12 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_24_171201) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "finished_at"
+  end
+
+  create_table "maintenances", force: :cascade do |t|
+    t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tasks", force: :cascade do |t|
