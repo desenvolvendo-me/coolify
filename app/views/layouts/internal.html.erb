@@ -31,6 +31,8 @@
       <button type="button" class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
         <% if current_user.avatar.attached? %>
           <%= image_tag(current_user.avatar, class: 'w-8 h-8 rounded-full') %>
+        <% else %>
+          <%= image_tag('profile.jpg', class: 'w-8 h-8 rounded-full') %>
         <% end %>
       </button>
       <!-- Dropdown menu -->
@@ -42,6 +44,9 @@
         <ul class="py-2" aria-labelledby="user-menu-button">
           <li>
             <%= link_to t('views.layouts.internal.settings'), edit_user_registration_path, class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white" %>
+          </li>
+          <li>
+            <%= link_to t('views.layouts.internal.company'), edit_manager_company_path, class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white" %>
           </li>
           <li>
             <% if user_signed_in? %>

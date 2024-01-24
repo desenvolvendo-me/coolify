@@ -5,6 +5,7 @@ pt-BR:
         sr-only:
           open_menu: "Abrir menu principal"
         settings: "Configurações"
+        company: "Empresa"
         sign_out: "Sair da conta"
         dashboard: "Painel"
         goal: "Meta"

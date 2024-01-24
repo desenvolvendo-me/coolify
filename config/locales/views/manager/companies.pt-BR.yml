@@ -1,0 +1,23 @@
+pt-BR:
+  manager:
+    companies:
+      new:
+        title: 'Cadastrando empresa'
+        back: 'Voltar'
+        save: 'Salvar'
+      edit:
+        title: 'Editando empresa'
+        save: 'Salvar'
+        show: 'Mostrar'
+      show:
+        title: 'Detalhando empresa'
+        edit: 'Editar'
+        back: 'Voltar'
+        save: 'Salvar'
+        delete: 'Apagar'
+        delete_confirm: 'Você tem certeza?'
+      company:
+        show: 'Mostrar'
+        edit: 'Editar'
+        delete: 'Apagar'
+        delete_confirm: 'Você tem certeza?'
