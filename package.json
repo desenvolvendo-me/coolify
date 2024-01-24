@@ -1,7 +1,30 @@
 {
   "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10",
     "esbuild": "^0.19.4",
-    "flowbite": "^1.8.1"
-  }
+    "flowbite": "^1.8.1",
+    "postcss-import": "^16.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.33",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.4.1"
+  },
+  "name": "coolify",
+  "description": "Criar uma arquitetura de referência para se tornar uma máquina de criação de microsaas juntos com os alunos.",
+  "version": "1.0.0",
+  "main": "postcss.config.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "watch:tailwind": "npx tailwindcss build -o public/assets/stylesheets/tailwind.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
