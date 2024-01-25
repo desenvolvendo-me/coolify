@@ -9,5 +9,9 @@ pt-BR:
       dashboard: "Painel"
       goal: "Meta"
       new: "Novo"
-      maintenance: 'Manutenção'
+    menu_maintenance:
+      menu: "Manutenção"
+      add: 'Cadastrar'
+    menu_equipment:
+      menu: "Equipamento"
       add: 'Cadastrar'

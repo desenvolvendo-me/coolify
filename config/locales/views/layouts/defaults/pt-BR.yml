@@ -1,12 +1,22 @@
 pt-BR:
-  views:
-    layouts:
-      defaults:
-        sr-only:
-          open_menu: "Abrir menu principal"
+  external:
+    home:
+      index:
         you_are: "Você está na área"
         external: "externa"
-        internal: "interna"
         from_app: "da aplicação."
         light_bulb: "Lâmpada elétrica"
         close: "Fechar banner"
+        sr-only:
+          open_menu: "Abrir menu principal"
+        stimulus: "Sample Stimulus"
+
+  manager:
+    home:
+      index:
+        internal: "interna"
+        you_are: "Você está na área"
+        from_app: "da aplicação."
+        light_bulb: "Lâmpada elétrica"
+        sr-only:
+          open_menu: "Abrir menu principal"
