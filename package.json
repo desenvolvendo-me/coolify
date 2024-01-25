@@ -22,7 +22,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "watch:tailwind": "npx tailwindcss build -o public/assets/stylesheets/tailwind.css --watch"
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",
+    "build:css": "tailwind -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify"
   },
   "keywords": [],
   "author": "",

@@ -18,16 +18,20 @@
   <body class="h-dvh flex flex-col">
     <main>
       <% if devise_page? %>
-        <div class="flex flex-col justify-center h-full">
-          <div class="flex flex-col p-5 sm:px-14 bg-gradient-to-r from-teal-300 to-blue-900 h-52 mb-10">
-            <div class="w-36 md:flex mb-5">
-              <%= image_tag('coolify-logo-cian.png', alt: "Coolify Logo", class: 'w-full') %>
+        <div class="flex flex-col justify-center h-full w-full lg:bg-gradient-to-r from-teal-300 to-blue-900">
+
+          <div class="flex flex-col justify-center lg:flex-row-reverse lg:bg-white lg:m-14 lg:h-full lg:rounded-2xl lg:overflow-hidden lg:shadow-2xl">
+            <div class="flex flex-col p-5 sm:px-14 bg-gradient-to-r from-teal-300 to-blue-900 h-52 lg:bg-inherit lg:flex-1 lg:bg-white">
+              <div class="w-36 md:flex mb-5">
+                <%= image_tag('coolify-logo-cian.png', alt: "Coolify Logo", class: 'w-full') %>
+              </div>
+              <div class="max-h-40 max-w-40 rounded-md overflow-hidden shrink-0 shadow-lg lg:max-h-none">
+                <%= image_tag('snowball_cover_retangle.png', alt: "Snow ball square", class: 'w-full h-full object-cover object-center') %>
+              </div>
             </div>
-            <div class="max-h-40 max-w-40 rounded-md overflow-hidden shrink-0 shadow-lg">
-              <%= image_tag('snowball_cover_retangle.png', alt: "Snow ball square", class: 'w-full h-full object-cover object-center') %>
-            </div>
+            <%= yield %>
           </div>
-          <%= yield %>
+
         </div>
       <% else %>
         <%= yield %>
