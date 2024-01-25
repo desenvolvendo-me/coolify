@@ -17,6 +17,7 @@
 #  unconfirmed_email      :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  company_id             :integer
 #
 # Indexes
 #
@@ -26,9 +27,12 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
+  acts_as_tenant :company
 
   has_one_attached :avatar
-
+  belongs_to :company
+  accepts_nested_attributes_for :company
+  
   validates :name, presence: true
 
   enum role: { admin: 'admin', employee: 'employee' }

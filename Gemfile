@@ -32,6 +32,7 @@ gem 'tzinfo-data',
     platforms: %i[mingw mswin x64_mingw jruby]
 gem 'yaml'
 gem 'json', '2.7.1'
+gem 'acts_as_tenant'
 
 group :development, :test do
   gem 'annotate'

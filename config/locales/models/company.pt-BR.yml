@@ -1,0 +1,17 @@
+pt-BR:
+  activerecord:
+    errors:
+      models:
+        company:
+          attributes:
+            cnpj:
+              blank: 'nao pode ficar em branco'
+    models:
+      company:
+        one: 'Empresa'
+        other: 'Empresas'
+    attributes:
+      company:
+        cnpj: 'CNPJ'
+        created_at: 'Criado em'
+        updated_at: 'Atualizado em'

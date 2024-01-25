@@ -1,12 +1,15 @@
 pt-BR:
   layouts:
     internal:
-      sr-only:
-        open_menu: "Abrir menu principal"
-      settings: "Configurações"
-      sign_out: "Sair da conta"
       dashboard: "Painel"
-      goal: "Meta"
       new: "Novo"
-      maintenance: 'Manutenção'
-      add: 'Cadastrar'
+    menu_current_user:
+      account: "Conta"
+      company: "Empresa"
+      sign_out: "Sair da conta"
+    menu_maintenance:
+      menu: "Manutenção"
+      add: "Cadastrar"
+    menu_equipment:
+      menu: "Equipamento"
+      add: "Cadastrar"

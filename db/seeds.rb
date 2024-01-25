@@ -1,11 +1,19 @@
 if Rails.env.development?
   AdminUser.create!(email: 'admin@mail.com',
                     password: 'password', password_confirmation: 'password')
-  user_admin = User.create!(name: 'Administrador', email: 'admin@limpar.com',
-                            password: '000000', password_confirmation: '000000', role: :admin, confirmed_at: DateTime.now)
-  user_employee = User.create!(name: 'Funcionário', email: 'employee@limpar.com',
-                               password: '000000', password_confirmation: '000000', role: :employee, confirmed_at: DateTime.now)
-  user_admin.avatar.attach(io: File.open(Rails.root.join('spec', 'support', 'images', 'avatar-1.jpg')), filename: 'avatar-1', content_type: 'image/jpg')
+  company_1 = Company.create(cnpj: '08670497000167')
+  company_2 = Company.create(cnpj: '92325327000151')
+
+  user_admin_1 = User.create!(name: 'Administrador', email: 'admin1@limpar.com',
+                              password: '000000', password_confirmation: '000000',
+                              role: :admin, confirmed_at: DateTime.now, company: company_1)
+  User.create!(name: 'Administrador', email: 'admin2@limpar.com',
+               password: '000000', password_confirmation: '000000',
+               role: :admin, confirmed_at: DateTime.now, company: company_2)
+  user_employee = User.create!(name: 'Funcionário', email: 'employee1@limpar.com',
+                               password: '000000', password_confirmation: '000000',
+                               role: :employee, confirmed_at: DateTime.now, company: company_1)
+  user_admin_1.avatar.attach(io: File.open(Rails.root.join('spec', 'support', 'images', 'avatar-1.jpg')), filename: 'avatar-1', content_type: 'image/jpg')
   user_employee.avatar.attach(io: File.open(Rails.root.join('spec', 'support', 'images', 'avatar-2.jpg')), filename: 'avatar-2', content_type: 'image/jpg')
 
   goal1 = Goal.create(name: 'Aprender Linguagem Ruby',
@@ -84,18 +92,18 @@ if Rails.env.development?
               status: "done", goal: goal15)
 
   # Creates Equipment
-  Equipment.create(tag: 'S2AR-013')
-  Equipment.create(tag: 'RAR-001')
-  Equipment.create(tag: '003')
-  Equipment.create(tag: 'MAR-003A')
-  Equipment.create(tag: '005')
+  Equipment.create(tag: 'S2AR-013', company: company_1)
+  Equipment.create(tag: 'RAR-001', company: company_1)
+  Equipment.create(tag: '003', company: company_1)
+  Equipment.create(tag: 'MAR-003A', company: company_1)
+  Equipment.create(tag: '005', company: company_2)
 
   # Creates maintenances
-  Maintenance.create(date: Date.strptime('10/01/2024', '%d/%m/%Y'))
-  Maintenance.create(date: Date.strptime('14/01/2024', '%d/%m/%Y'))
-  Maintenance.create(date: Date.strptime('17/01/2024', '%d/%m/%Y'))
-  Maintenance.create(date: Date.strptime('20/12/2023', '%d/%m/%Y'))
-  Maintenance.create(date: Date.strptime('27/05/2023', '%d/%m/%Y'))
-  Maintenance.create(date: Date.strptime('27/09/2023', '%d/%m/%Y'))
+  Maintenance.create(date: Date.strptime('10/01/2024', '%d/%m/%Y'), company: company_1)
+  Maintenance.create(date: Date.strptime('14/01/2024', '%d/%m/%Y'), company: company_1)
+  Maintenance.create(date: Date.strptime('17/01/2024', '%d/%m/%Y'), company: company_1)
+  Maintenance.create(date: Date.strptime('20/12/2023', '%d/%m/%Y'), company: company_1)
+  Maintenance.create(date: Date.strptime('27/05/2023', '%d/%m/%Y'), company: company_1)
+  Maintenance.create(date: Date.strptime('27/09/2023', '%d/%m/%Y'), company: company_2)
 
 end
