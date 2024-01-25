@@ -16,5 +16,13 @@ pt-BR:
         avatar: 'Foto'
         email: 'Email'
         role: 'Perfil'
+        password: 'Senha'
+        password_hint: '(deixe em branco se não quiser mudar)'
+        password_confirmation: 'Confirmação da Senha'
+        current_password: 'Senha Atual'
+        current_password_hint: '(precisamos da sua senha atual para confirmar suas mudanças)'
         created_at: 'Criado em'
         updated_at: 'Atualizado em'
+        roles:
+          admin: 'Administrador'
+          employee: 'Funcionário'

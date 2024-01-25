@@ -20,6 +20,3 @@ pt-BR:
       doing: 'Fazendo'
       block: 'Travado'
       done: 'Feito'
-    roles:
-      admin: 'Administrador'
-      employee: 'Funcionário'
