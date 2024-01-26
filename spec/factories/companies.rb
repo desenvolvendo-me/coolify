@@ -9,6 +9,6 @@
 #
 FactoryBot.define do
   factory :company do
-    cnpf { '42930044000160' }
+    cnpj { '42930044000160' }
   end
 end

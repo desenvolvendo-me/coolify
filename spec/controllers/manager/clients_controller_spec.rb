@@ -2,10 +2,11 @@ require 'rails_helper'
 
 RSpec.describe Manager::ClientsController, type: :controller do
   let(:admin_user) { create(:user, role: :admin) }
-  let(:client) { create(:client) }
+  let(:client) { create(:client, company: admin_user.company) }
 
   before do
     sign_in admin_user
+    ActsAsTenant.current_tenant = admin_user.company
   end
 
   describe 'GET #index' do
