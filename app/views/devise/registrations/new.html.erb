@@ -2,14 +2,14 @@
   <h1 class="font-bold text-3xl">Cadastre-se!</h1>
   <div class="flex gap-1">
     <span class="font-thin">Já possui uma conta?</span>
-    <%= link_to "Entrar", new_session_path(resource_name), class: '' %>
+    <%= link_to "Entrar", new_session_path(resource_name), class: 'hover:underline' %>
   </div>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'mt- flex flex-col' }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
   <div>
     <%= f.fields_for :company, resource.build_company do |company_form| %>
       <%= company_form.label :cnpj %><br/>
-      <%= company_form.text_field :cnpj %>
+      <%= company_form.text_field :cnpj, class: 'rounded border-gray-300 w-full' %>
     <% end %>
   </div>
 

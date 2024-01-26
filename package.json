@@ -23,7 +23,7 @@
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",
-    "build:css": "tailwind -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify"
+    "build:css": "tailwind -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/tailwindApplication.css --minify"
   },
   "keywords": [],
   "author": "",

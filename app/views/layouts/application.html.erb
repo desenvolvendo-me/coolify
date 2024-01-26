@@ -6,7 +6,9 @@
     <%= favicon_link_tag "coolify-favicon-color.png"%>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "tailwind.css", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
@@ -19,10 +21,12 @@
     <main>
       <% if devise_page? %>
         <div class="flex flex-col justify-center h-full w-full lg:bg-gradient-to-r from-teal-300 to-blue-900">
-
-          <div class="flex flex-col justify-center lg:flex-row-reverse lg:bg-white lg:m-14 lg:h-full lg:rounded-2xl lg:overflow-hidden lg:shadow-2xl">
-            <div class="flex flex-col p-5 sm:px-14 bg-gradient-to-r from-teal-300 to-blue-900 h-52 lg:bg-inherit lg:flex-1 lg:bg-white">
-              <div class="w-36 md:flex mb-5">
+          <div class="w-36 hidden md:flex lg:mt-8 lg:ml-40 lg:flex">
+            <%= image_tag('coolify-logo-cian.png', alt: "Coolify Logo", class: 'w-full') %>
+          </div>
+          <div class="flex flex-col justify-center lg:flex-row-reverse lg:bg-white lg:my-16 lg:mx-40 lg:h-full lg:items-center lg:rounded-2xl lg:overflow-hidden lg:shadow-2xl">
+            <div class="flex flex-col p-5 sm:px-14 bg-gradient-to-r from-teal-300 to-blue-900 h-52 lg:h-full lg:bg-inherit lg:flex-1 lg:bg-white">
+              <div class="w-36 md:flex mb-5 lg:hidden">
                 <%= image_tag('coolify-logo-cian.png', alt: "Coolify Logo", class: 'w-full') %>
               </div>
               <div class="max-h-40 max-w-40 rounded-md overflow-hidden shrink-0 shadow-lg lg:max-h-none">
