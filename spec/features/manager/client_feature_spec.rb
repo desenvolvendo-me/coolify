@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature 'Manager Client', type: :feature do
+  let(:admin_user) { create(:user, role: :admin) }
   let(:client_1_name) { FFaker::Name.name }
   let(:client_2_name) { FFaker::Name.name }
   let(:new_name) { FFaker::Name.name }
@@ -9,6 +10,7 @@ RSpec.feature 'Manager Client', type: :feature do
   before do
     create(:client, name: client_1_name)
     create(:client, name: client_2_name)
+    login_as(admin_user, scope: :user)
   end
 
   scenario 'list clients' do

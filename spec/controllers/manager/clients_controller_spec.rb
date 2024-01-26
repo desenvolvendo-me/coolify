@@ -1,7 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Manager::ClientsController, type: :controller do
+  let(:admin_user) { create(:user, role: :admin) }
   let(:client) { create(:client) }
+
+  before do
+    sign_in admin_user
+  end
 
   describe 'GET #index' do
     it 'assigns all clients to @clients' do

@@ -1,9 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Manager::EquipmentsController, type: :controller do
+  let(:admin_user) { create(:user, role: :admin) }
   let(:equipment) { create(:equipment) }
   let(:valid_attributes) { { tag: '001' } }
   let(:invalid_attributes) { { tag: '' } }
+
+  before do
+    sign_in admin_user
+  end
 
   describe 'GET #index' do
     it 'assigns all equipments as @equipments' do

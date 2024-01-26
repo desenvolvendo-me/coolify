@@ -1,11 +1,14 @@
 require 'rails_helper'
 
 RSpec.feature 'Manager Equipments', type: :feature do
+  let(:admin_user) { create(:user, role: :admin) }
+
   before do
     @tag1 = 'AAR-008-LB'
     @tag2 = 'MAR-004-B'
     create(:equipment, tag: @tag1)
     create(:equipment, tag: @tag2)
+    login_as(admin_user, scope: :user)
   end
 
   scenario 'list equipments' do
