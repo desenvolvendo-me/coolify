@@ -1,15 +1,20 @@
 pt-BR:
   layouts:
     internal:
-      sr-only:
-        open_menu: "Abrir menu principal"
-      settings: "Configurações"
-      sign_out: "Sair da conta"
       dashboard: "Painel"
-      goal: "Meta"
       new: "Novo"
-      maintenance: 'Manutenções'
-      equipment: 'Equipamentos'
-      clients: 'Clientes'
-      add: 'Cadastrar'
-      generate_report: 'Gerar Laudo'
+    menu_current_user:
+      account: "Conta"
+      company: "Empresa"
+      sign_out: "Sair da conta"
+    menu_manager:
+      menu: "Gestão"
+      user: 'Usuários'
+    menu_generate_report:
+      menu: 'Gerar Laudo'
+    menu_client:
+      menu: "Clientes"
+    menu_maintenance:
+      menu: "Manutenções"
+    menu_equipment:
+      menu: "Equipamentos"

@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   end
 
   namespace :manager do
+    resource :company
     resources :clients
     resources :users
     resources :equipments

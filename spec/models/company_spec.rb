@@ -1,17 +1,16 @@
 # == Schema Information
 #
-# Table name: maintenances
+# Table name: companies
 #
 #  id         :bigint           not null, primary key
-#  date       :date
+#  cnpj       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  company_id :integer
 #
 require 'rails_helper'
 
-RSpec.describe Maintenance, type: :model do
-  describe 'validations' do
-    it { is_expected.to validate_presence_of(:date) }
+RSpec.describe Company, type: :model do
+  describe 'associations' do
+    it { should have_many(:users).dependent(:destroy) }
   end
 end

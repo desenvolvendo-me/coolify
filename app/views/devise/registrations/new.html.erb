@@ -6,6 +6,12 @@
   </div>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'mt-10' }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
+  <div>
+    <%= f.fields_for :company, resource.build_company do |company_form| %>
+      <%= company_form.label :cnpj %><br/>
+      <%= company_form.text_field :cnpj %>
+    <% end %>
+  </div>
 
   <div>
     <%= f.label :name %><br />

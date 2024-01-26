@@ -1,15 +1,14 @@
 # == Schema Information
 #
-# Table name: maintenances
+# Table name: companies
 #
 #  id         :bigint           not null, primary key
-#  date       :date
+#  cnpj       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  company_id :integer
 #
-class Maintenance < ApplicationRecord
-  acts_as_tenant :company
-
-  validates :date, presence: true
+FactoryBot.define do
+  factory :company do
+    cnpf { '42930044000160' }
+  end
 end

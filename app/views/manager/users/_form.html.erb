@@ -1,7 +1,20 @@
 <div class="flex flex-col">
   <div class="flex">
+    <%= form.input :avatar, as: :file %>
+  </div>
+
+  <div class="flex">
     <%= form.input :name, placeholder: ' ' %>
     <%= form.input :email, placeholder: ' ' %>
-    <%= form.select :role, User.roles.keys.map { |role| [role.titleize, role] }, include_blank: true %>
+    <%= form.input :role, collection: User.roles.keys.map { |role| [User.human_enum_name(:role, role), role] }, include_blank: true %>
+  </div>
+
+  <div class="flex">
+    <%= form.input :password, autocomplete: "off", placeholder: '', hint: t('activerecord.attributes.user.password_hint') %>
+    <%= form.input :password_confirmation, autocomplete: "off", placeholder: '' %>
+  </div>
+
+  <div class="flex">
+    <%= form.input :current_password, autocomplete: "off", placeholder: '', hint: t('activerecord.attributes.user.current_password_hint') %>
   </div>
 </div>

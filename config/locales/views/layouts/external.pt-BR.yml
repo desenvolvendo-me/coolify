@@ -1,9 +1,11 @@
 pt-BR:
-  views:
-    layouts:
-      external:
-        home: "Início"
-        about: "Sobre"
-        services: "Serviços"
-        pricing: "Valores"
-        contact: "Contato"
+  layouts:
+    external:
+      home: "Início"
+      about: "Sobre"
+      services: "Serviços"
+      pricing: "Valores"
+      contact: "Contato"
+      login: "Entrar"
+      logout: "Sair"
+      signup: "Cadastrar"
