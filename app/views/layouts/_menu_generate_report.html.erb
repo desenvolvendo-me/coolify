@@ -1,0 +1,16 @@
+<li>
+  <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-report-menu" data-collapse-toggle="dropdown-report-menu">
+    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1v3m5-3v3m5-3v3M1 7h18M5 11h10M2 3h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/>
+    </svg>
+    <span class="flex-1 ml-3 text-left whitespace-nowrap"><%= t('.menu') %></span>
+    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+    </svg>
+  </button>
+  <ul id="dropdown-report-menu" class="hidden py-2 space-y-2">
+    <%= render 'layouts/menu_client' %>
+    <%= render 'layouts/menu_equipment' %>
+    <%= render 'layouts/menu_maintenance' %>
+  </ul>
+</li>

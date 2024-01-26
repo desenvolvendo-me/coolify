@@ -2,6 +2,7 @@ pt-BR:
   manager:
     maintenances:
       index:
+        title: 'Manutenções'
         search: 'Pesquisar'
         add_maintenance: "Criar manutenção"
         date: 'Data'

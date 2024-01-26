@@ -1,6 +1,6 @@
 module ApplicationHelper
-  def filter_q(q)
-    (params[:q] ? params[:q].to_unsafe_h : {}).merge(role_eq: q)
+  def filter_q(query)
+    (params[:q] ? params[:q].to_unsafe_h : {}).merge(role_eq: query)
   end
 
   def convert_to_id(resource)
@@ -8,6 +8,6 @@ module ApplicationHelper
   end
 
   def devise_page?
-    devise_controller? && ['sessions', 'registrations', 'passwords'].include?(controller_name)
+    devise_controller? && %w[sessions registrations passwords].include?(controller_name)
   end
 end

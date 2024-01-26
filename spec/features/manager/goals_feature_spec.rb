@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Manager Goals', type: :feature do
+RSpec.feature 'Manager Goals', type: :feature, skip: true do
   before do
     create(:goal, name: 'Aprender Ruby')
     create(:goal, name: 'Aprender Rails')

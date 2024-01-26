@@ -1,0 +1,17 @@
+pt-BR:
+  activerecord:
+    errors:
+      models:
+        client:
+          attributes:
+            name:
+              blank: 'não pode ficar em branco'
+    models:
+      client:
+        one: 'Cliente'
+        other: 'Clientes'
+    attributes:
+      client:
+        name: 'Nome'
+        created_at: 'Criado em'
+        updated_at: 'Atualizado em'

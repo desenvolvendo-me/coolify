@@ -1,9 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe Manager::EquipmentsController, type: :controller do
-  let(:equipment) { create(:equipment) }
+  let(:admin_user) { create(:user, role: :admin) }
+  let(:equipment) { create(:equipment, company: admin_user.company) }
   let(:valid_attributes) { { tag: '001' } }
   let(:invalid_attributes) { { tag: '' } }
+
+  before do
+    sign_in admin_user
+    ActsAsTenant.current_tenant = admin_user.company
+  end
 
   describe 'GET #index' do
     it 'assigns all equipments as @equipments' do

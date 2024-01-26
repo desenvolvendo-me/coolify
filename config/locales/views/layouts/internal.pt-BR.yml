@@ -7,9 +7,14 @@ pt-BR:
       account: "Conta"
       company: "Empresa"
       sign_out: "Sair da conta"
+    menu_manager:
+      menu: "Gestão"
+      user: 'Usuários'
+    menu_generate_report:
+      menu: 'Gerar Laudo'
+    menu_client:
+      menu: "Clientes"
     menu_maintenance:
-      menu: "Manutenção"
-      add: "Cadastrar"
+      menu: "Manutenções"
     menu_equipment:
-      menu: "Equipamento"
-      add: "Cadastrar"
+      menu: "Equipamentos"

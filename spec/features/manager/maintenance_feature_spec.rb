@@ -1,9 +1,12 @@
 require 'rails_helper'
 
 RSpec.feature 'Manager Maintenances', type: :feature do
+  let(:admin_user) { create(:user, role: :admin) }
+
   before do
     create(:maintenance, date: Date.strptime('15-12-2023', '%d-%m-%Y'))
     create(:maintenance, date: Date.strptime('18-01-2024', '%d-%m-%Y'))
+    login_as(admin_user, scope: :user)
   end
 
   scenario 'list maintenances' do

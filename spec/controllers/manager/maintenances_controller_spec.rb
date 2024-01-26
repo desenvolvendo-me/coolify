@@ -1,9 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe Manager::MaintenancesController, type: :controller do
-  let(:maintenance) { create(:maintenance) }
+  let(:admin_user) { create(:user, role: :admin) }
+  let(:maintenance) { create(:maintenance, company: admin_user.company) }
   let(:valid_attributes) { { date: Date.strptime('31-01-2024', '%d-%m-%Y') } }
   let(:invalid_attributes) { { date: nil } }
+
+  before do
+    sign_in admin_user
+    ActsAsTenant.current_tenant = admin_user.company
+  end
 
   describe 'GET #index' do
     it 'assigns all maintenances as @maintenances' do

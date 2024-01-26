@@ -1,14 +1,14 @@
 # == Schema Information
 #
-# Table name: companies
+# Table name: clients
 #
 #  id         :bigint           not null, primary key
-#  cnpj       :string
+#  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 FactoryBot.define do
-  factory :company do
-    cnpj { '42930044000160' }
+  factory :client do
+    name { FFaker::Name.name }
   end
 end

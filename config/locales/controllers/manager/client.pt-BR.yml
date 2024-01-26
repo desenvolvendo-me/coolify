@@ -1,0 +1,9 @@
+pt-BR:
+  manager:
+    clients:
+      create:
+        success: 'Perfil cadastrado com sucesso.'
+      update:
+        success: 'Perfil atualizado com sucesso.'
+      destroy:
+        success: 'Perfil apagado com sucesso.'

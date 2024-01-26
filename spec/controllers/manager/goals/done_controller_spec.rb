@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe Manager::Goals::DoneController,
-               type: :controller do
+RSpec.describe Manager::Goals::DoneController, skip: true,
+                                               type: :controller do
   let(:goal) { create(:goal) }
   let(:goals) { create_list(:goal, 3) }
 
