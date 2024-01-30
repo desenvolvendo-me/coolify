@@ -32,7 +32,7 @@ class User < ApplicationRecord
   has_one_attached :avatar
   belongs_to :company
   accepts_nested_attributes_for :company
-  
+
   validates :name, presence: true
 
   enum role: { admin: 'admin', employee: 'employee' }

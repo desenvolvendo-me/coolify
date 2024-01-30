@@ -25,5 +25,6 @@ FactoryBot.define do
                   .strftime('%d-%m-%Y')
     end
     cooler
+    company
   end
 end
