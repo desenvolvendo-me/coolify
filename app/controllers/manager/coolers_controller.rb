@@ -5,7 +5,7 @@ module Manager
     def index
       @q = Cooler.ransack(params[:q])
       @coolers = @q.result(distinct: true)
-      @coolers = @coolers.order('created_at').page(params[:page]).per(4)
+      @coolers = @coolers.order('created_at').page(params[:page])
     end
 
     def show; end
