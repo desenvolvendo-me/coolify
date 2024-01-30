@@ -10,7 +10,12 @@
 #
 require 'rails_helper'
 
-RSpec.describe cooler, type: :model do
+RSpec.describe Cooler, type: :model do
+  describe 'association' do
+    it { should belong_to(:company) }
+    it { should have_many(:maintenance) }
+  end
+
   describe 'validations' do
     it { is_expected.to validate_presence_of(:tag) }
   end

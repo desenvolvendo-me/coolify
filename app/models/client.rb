@@ -8,6 +8,7 @@
 #  updated_at :datetime         not null
 #
 class Client < ApplicationRecord
+  acts_as_tenant :company
   validates :name, presence: true
 
   def to_s

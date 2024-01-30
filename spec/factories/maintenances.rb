@@ -24,5 +24,6 @@ FactoryBot.define do
                            Time.zone.local(2024, 1, 31))
                   .strftime('%d-%m-%Y')
     end
+    cooler
   end
 end

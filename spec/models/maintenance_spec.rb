@@ -20,6 +20,11 @@
 require 'rails_helper'
 
 RSpec.describe Maintenance, type: :model do
+  describe 'association' do
+    it { should belong_to(:company) }
+    it { should belong_to(:cooler) }
+  end
+
   describe 'validations' do
     it { is_expected.to validate_presence_of(:date) }
   end

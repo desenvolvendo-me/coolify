@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Manager::coolersController, type: :controller do
+RSpec.describe Manager::CoolersController, type: :controller do
   let(:admin_user) { create(:user, role: :admin) }
   let(:cooler) { create(:cooler, company: admin_user.company) }
   let(:valid_attributes) { { tag: '001' } }
@@ -42,7 +42,7 @@ RSpec.describe Manager::coolersController, type: :controller do
   describe 'GET #new' do
     it 'assigns a new cooler as @cooler' do
       get :new
-      expect(assigns(:cooler)).to be_a_new(cooler)
+      expect(assigns(:cooler)).to be_a_new(Cooler)
     end
   end
 
@@ -58,12 +58,12 @@ RSpec.describe Manager::coolersController, type: :controller do
       it 'creates a new cooler' do
         expect do
           post :create, params: { cooler: valid_attributes }
-        end.to change(cooler, :count).by(1)
+        end.to change(Cooler, :count).by(1)
       end
 
       it 'redirects to the created cooler' do
         post :create, params: { cooler: valid_attributes }
-        expect(response).to redirect_to(manager_cooler_path(cooler.last))
+        expect(response).to redirect_to(manager_cooler_path(Cooler.last))
       end
     end
 
@@ -102,7 +102,7 @@ RSpec.describe Manager::coolersController, type: :controller do
       cooler = create(:cooler)
       expect do
         delete :destroy, params: { id: cooler.id }
-      end.to change(cooler, :count).by(-1)
+      end.to change(Cooler, :count).by(-1)
     end
 
     it 'redirects to the coolers list' do
