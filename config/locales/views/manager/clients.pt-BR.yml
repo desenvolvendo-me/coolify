@@ -1,6 +1,16 @@
 pt-BR:
   manager:
     clients:
+      index:
+        title: 'Clientes'
+        search: 'Pesquisar'
+        register_client: 'Cadastrar cliente'
+        name: 'Nome'
+        filter_by: 'Filtrar'
+        filter_1: 'Filtro 1'
+        filter_2: 'Filtro 2'
+        actions: 'Ações'
+        action_1: "Ação 1"
       client:
         show: 'Mostrar'
         edit: 'Editar'
@@ -10,12 +20,6 @@ pt-BR:
         title: 'Editando cliente'
         show: 'Mostrar'
         go_back: 'Voltar'
-      index:
-        title: 'Clientes'
-        search: 'Pesquisar'
-        register_client: 'Cadastrar cliente'
-        name: 'Nome'
-        actions: 'Ações'
       new:
         title: 'Cadastrando cliente'
         go_back: 'Voltar'

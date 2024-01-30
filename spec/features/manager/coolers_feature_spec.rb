@@ -59,7 +59,7 @@ RSpec.xfeature 'Manager Coolers', type: :feature do
 
     click_button "#{Cooler.first.id}-dropdown-button"
     click_link I18n.t('manager.coolers.cooler.delete')
-    page.accept_alert I18n.t('views.manager.goals.delete_confirm')
+    page.accept_alert I18n.t('manager.coolers.cooler.delete_confirm')
 
     expect(page).to have_text(@tag2)
     expect(page).not_to have_text(@tag1)

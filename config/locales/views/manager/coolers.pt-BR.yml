@@ -6,7 +6,10 @@ pt-BR:
         search: 'Pesquisar'
         add_cooler: "Cadastrar equipamento"
         filter_by: 'Filtrar'
+        filter_1: 'Filtro 1'
+        filter_2: 'Filtro 2'
         actions: 'Ações'
+        action_1: "Ação 1"
         pages:
           showing: 'Mostrando'
           of: 'de'

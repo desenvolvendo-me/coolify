@@ -88,15 +88,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_30_121906) do
     t.integer "company_id"
   end
 
-  create_table "goals", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.string "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.datetime "finished_at"
-  end
-
   create_table "maintenances", force: :cascade do |t|
     t.date "date"
     t.datetime "created_at", null: false
@@ -104,17 +95,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_30_121906) do
     t.integer "company_id"
     t.integer "cooler_id"
     t.index ["cooler_id"], name: "index_maintenances_on_cooler_id"
-  end
-
-  create_table "tasks", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.string "status"
-    t.bigint "goal_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.datetime "finished_at"
-    t.index ["goal_id"], name: "index_tasks_on_goal_id"
   end
 
   create_table "users", force: :cascade do |t|
