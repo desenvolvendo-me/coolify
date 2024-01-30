@@ -67,7 +67,7 @@ module Manager
     end
 
     def maintenance_params
-      params.require(:maintenance).permit(:date)
+      params.require(:maintenance).permit(:date, :cooler_id)
     end
   end
 end

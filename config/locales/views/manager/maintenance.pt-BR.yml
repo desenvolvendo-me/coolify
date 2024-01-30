@@ -6,6 +6,7 @@ pt-BR:
         search: 'Pesquisar'
         add_maintenance: "Criar manutenção"
         date: 'Data'
+        cooler: 'Equipamento'
         actions: "Ações"
         pages:
           showing: 'Mostrando'

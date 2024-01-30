@@ -13,4 +13,8 @@ class Cooler < ApplicationRecord
   has_many :maintenances
 
   validates :tag, presence: true
+
+  def to_s
+    tag
+  end
 end
