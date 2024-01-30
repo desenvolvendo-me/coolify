@@ -24,7 +24,7 @@ if Rails.env.development?
   10.times do |i|
     random_date = FFaker::Time.between(Date.new(2023, 1, 1), Date.new(2024, 12, 31))
     company = (i <= 5) ? company_1 : company_2
-    Maintenance.create(date: random_date, company: company, cooler: Cooler.find(i+1))
+    Maintenance.create(date: random_date, company: company, cooler: Cooler.find(i + 1))
   end
 
   2.times do |i|
@@ -33,7 +33,8 @@ if Rails.env.development?
   end
 
   # Clients
-  5.times do
-    Client.create(name: FFaker::Company.name)
+  10.times do |i|
+    company = (i <= 5) ? company_1 : company_2
+    Client.create(name: FFaker::Company.name, company: company)
   end
 end
