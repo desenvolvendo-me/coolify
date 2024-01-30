@@ -10,7 +10,7 @@
 #
 class Cooler < ApplicationRecord
   acts_as_tenant :company
-  has_many :maintenances
+  has_many :maintenances, dependent: :destroy
 
   validates :tag, presence: true
 

@@ -33,7 +33,7 @@ Lint/MissingSuper:
 # Escrevemos mais linhas em arquivos de teste do que em arquivos de
 # código, então é importante poder ter esses arquivos do tamanho necessário
 Metrics/BlockLength:
-  ExcludedMethods: ['describe', 'context', 'feature', 'scenario', 'let', 'register', 'path']
+  ExcludedMethods: [ 'describe', 'context', 'feature', 'xfeature', 'scenario', 'let', 'register', 'path' ]
 
 # Costumamos usar o padrão do RuboCop, mas caso queira alterar o tamanho de
 # caracteres de uma linha, você pode fazê-lo aqui

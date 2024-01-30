@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-#TODO: Problema com os testes de feature
+# TODO: Problema com os testes de feature
 RSpec.xfeature 'Manager Client', type: :feature do
   let(:admin_user) { create(:user, role: :admin) }
   let(:client_1_name) { FFaker::Name.name }

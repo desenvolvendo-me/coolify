@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-#TODO: Problema com os testes de feature
+# TODO: Problema com os testes de feature
 RSpec.xfeature 'Manager Maintenances', type: :feature do
   let(:admin_user) { create(:user, role: :admin) }
 
