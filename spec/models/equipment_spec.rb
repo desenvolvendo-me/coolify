@@ -13,7 +13,7 @@ require 'rails_helper'
 RSpec.describe Cooler, type: :model do
   describe 'association' do
     it { should belong_to(:company) }
-    it { should have_many(:maintenance) }
+    it { should have_many(:maintenances) }
   end
 
   describe 'validations' do
