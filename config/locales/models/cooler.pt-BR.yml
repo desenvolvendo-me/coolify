@@ -2,16 +2,16 @@ pt-BR:
   activerecord:
     errors:
       models:
-        equipment:
+        cooler:
           attributes:
             tag:
               blank: 'nao pode ficar em branco'
     models:
-      equipment:
+      cooler:
         one: 'Equipamento'
         other: 'Equipamentos'
     attributes:
-      equipment:
+      cooler:
         tag: 'TAG'
         created_at: 'Criado em'
         updated_at: 'Atualizado em'

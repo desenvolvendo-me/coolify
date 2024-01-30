@@ -1,6 +1,6 @@
 pt-BR:
   manager:
-    equipments:
+    coolers:
       create: 'Equipamento cadastrado com sucesso.'
       update: 'Equipamento atualizado com sucesso.'
       destroy: 'Equipamento apagado com sucesso.'

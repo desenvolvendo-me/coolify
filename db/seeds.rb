@@ -13,31 +13,23 @@ if Rails.env.development?
   UserCreator.create_user('Administrador 1', 'admin2@limpar.com', :admin, company_2)
   UserCreator.create_user('Funcionário 1', 'employee1@limpar.com', :employee, company_1, 'avatar-2.jpg')
 
-  # Equipments
+  # coolers
   10.times do |i|
     tag = FFaker::Vehicle.vin[0..5]
     company = (i <= 5) ? company_1 : company_2
-
-    Equipment.create(tag: tag, company: company)
+    Cooler.create(tag: tag, company: company)
   end
 
   # Maintenances
   10.times do |i|
     random_date = FFaker::Time.between(Date.new(2023, 1, 1), Date.new(2024, 12, 31))
-
     company = (i <= 5) ? company_1 : company_2
-
-    Maintenance.create(date: random_date, company: company)
+    Maintenance.create(date: random_date, company: company, cooler: Cooler.find(i+1))
   end
 
-  equipments = Equipment.where(company: company_1)
-  equipment_1 = equipments.first
-  equipment_2 = equipments.second
-
-  Maintenance.where(company: company_1).each_with_index do |maintenance, i|
-    equipment = (i <= 5) ? equipment_1 : equipment_2
-
-    maintenance.update(equipment: equipment)
+  2.times do |i|
+    random_date = FFaker::Time.between(Date.new(2023, 1, 1), Date.new(2024, 12, 31))
+    Maintenance.create(date: random_date, company: company_1, cooler: Cooler.find(1))
   end
 
   # Clients

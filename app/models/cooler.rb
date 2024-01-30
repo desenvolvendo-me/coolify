@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: equipment
+# Table name: coolers
 #
 #  id         :bigint           not null, primary key
 #  tag        :string

@@ -1,10 +1,10 @@
 pt-BR:
   manager:
-    equipments:
+    coolers:
       index:
         title: 'Equipamentos'
         search: 'Pesquisar'
-        add_equipment: "Cadastrar equipamento"
+        add_cooler: "Cadastrar equipamento"
         filter_by: 'Filtrar'
         actions: 'Ações'
         pages:
@@ -27,7 +27,7 @@ pt-BR:
         save: 'Salvar'
         delete: 'Apagar'
         delete_confirm: 'Você tem certeza?'
-      equipment:
+      cooler:
         show: 'Mostrar'
         edit: 'Editar'
         delete: 'Apagar'

@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: equipment
+# Table name: cooler
 #
 #  id         :bigint           not null, primary key
 #  tag        :string
@@ -9,7 +9,7 @@
 #  company_id :integer
 #
 FactoryBot.define do
-  factory :equipment do
+  factory :cooler do
     tag { %w[S2AR-013 RAR-001 FAR-004 GAR-001 MAR-003A].sample }
   end
 end

@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: equipment
+# Table name: cooler
 #
 #  id         :bigint           not null, primary key
 #  tag        :string
@@ -10,7 +10,7 @@
 #
 require 'rails_helper'
 
-RSpec.describe Equipment, type: :model do
+RSpec.describe cooler, type: :model do
   describe 'validations' do
     it { is_expected.to validate_presence_of(:tag) }
   end

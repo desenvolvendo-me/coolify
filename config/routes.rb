@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     resource :company
     resources :clients
     resources :users
-    resources :equipments
+    resources :coolers
     resources :maintenances
     resources :goals
     namespace :goals do
