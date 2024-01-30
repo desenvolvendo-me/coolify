@@ -30,6 +30,16 @@ if Rails.env.development?
     Maintenance.create(date: random_date, company: company)
   end
 
+  equipments = Equipment.where(company: company_1)
+  equipment_1 = equipments.first
+  equipment_2 = equipments.second
+
+  Maintenance.where(company: company_1).each_with_index do |maintenance, i|
+    equipment = (i <= 5) ? equipment_1 : equipment_2
+
+    maintenance.update(equipment: equipment)
+  end
+
   # Clients
   5.times do
     Client.create(name: FFaker::Company.name)

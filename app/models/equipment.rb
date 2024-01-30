@@ -8,8 +8,9 @@
 #  updated_at :datetime         not null
 #  company_id :integer
 #
-class Equipment < ApplicationRecord
+class Cooler < ApplicationRecord
   acts_as_tenant :company
+  has_many :maintenances
 
   validates :tag, presence: true
 end
