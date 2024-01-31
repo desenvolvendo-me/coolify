@@ -1,7 +1,9 @@
 <div class="relative">
   <div class="flex justify-between items-center mb-4">
-    <h1 class="font-bold text-4xl"><%= t'.title' %></h1>
+    <h1 class="font-bold text-4xl"><%= t '.title' %></h1>
     <div>
+      <%= link_to t('.new_maintenance'), new_manager_cooler_maintenance_path(@cooler), class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" %>
+      <%= link_to t('.maintenances'), manager_cooler_maintenances_path(@cooler), class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" %>
       <%= link_to t('.back'), manager_coolers_path, method: :get, class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" %>
       <%= link_to t('.edit'), edit_manager_cooler_path(@cooler), class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" %>
       <%= link_to t('.delete'), manager_cooler_path(@cooler),

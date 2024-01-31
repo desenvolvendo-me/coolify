@@ -16,6 +16,14 @@
             <%= link_to t('.edit'), edit_manager_cooler_path(cooler), class: "block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" %>
           </li>
         </ul>
+        <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="<%= cooler.id %>-dropdown-button">
+          <li>
+            <%= link_to t('.new_maintenance'), new_manager_cooler_maintenance_path(cooler), class: "block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" %>
+          </li>
+          <li>
+            <%= link_to t('.maintenances'), manager_cooler_maintenances_path(cooler), class: "block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" %>
+          </li>
+        </ul>
         <div class="py-1">
           <%= link_to t('.delete'), manager_cooler_path(cooler),
                       data: { turbo_method: :delete, turbo_confirm: t('.delete_confirm') }, class: "block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white" %>

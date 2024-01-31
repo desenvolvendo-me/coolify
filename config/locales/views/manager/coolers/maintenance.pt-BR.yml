@@ -1,0 +1,39 @@
+pt-BR:
+  manager:
+    coolers:
+      maintenances:
+        index:
+          title: 'Manutenções de %{cooler}'
+          search: 'Pesquisar'
+          add_maintenance: "Criar Manutenção"
+          filter_by: 'Filtrar'
+          filter_1: 'Filtro 1'
+          filter_2: 'Filtro 2'
+          date: 'Data'
+          cooler: 'Equipamento'
+          actions: "Ações"
+          action_1: "Ação 1"
+          pages:
+            showing: 'Mostrando'
+            of: 'de'
+          previous: 'anterior'
+          next: 'próximo'
+        maintenance:
+          show: 'Mostrar'
+          edit: 'Editar'
+          delete: 'Apagar'
+          delete_confirm: 'Você tem certeza?'
+        show:
+          title: 'Detalhando Manutenção de %{cooler}'
+          back: 'Voltar'
+          edit: 'Editar'
+          delete: 'Apagar'
+          delete_confirm: 'Você tem certeza?'
+        new:
+          title: 'Cadastrando Manutenção de %{cooler}'
+          save: 'Salvar'
+        edit:
+          title: 'Editando Manutenção de %{cooler}'
+          save: 'Salvar'
+          show: 'Mostrar'
+          back: 'Voltar'

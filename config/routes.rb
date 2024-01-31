@@ -18,7 +18,11 @@ Rails.application.routes.draw do
     resource :company
     resources :clients
     resources :users
-    resources :coolers
+    resources :coolers do
+      scope module: :coolers do
+        resources :maintenances
+      end
+    end
     resources :maintenances
     get '', to: 'home#index', as: :home
   end
