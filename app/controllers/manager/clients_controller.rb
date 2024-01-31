@@ -52,7 +52,7 @@ module Manager
     end
 
     def client_params
-      params.require(:client).permit(:name)
+      params.require(:client).permit(:name, :razao_social, :endereco, :bairro, :telefone, :cnpj, :cep, :cidade, :email)
     end
   end
 end
