@@ -33,3 +33,7 @@ pt-BR:
         edit: 'Editar'
         delete: 'Apagar'
         delete_confirm: 'Você tem certeza?'
+        roles:
+          admin: 'Administrador'
+          employee: 'Funcionário'
+          technical_lead: 'Responsável técnico'

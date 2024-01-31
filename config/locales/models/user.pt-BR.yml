@@ -26,3 +26,4 @@ pt-BR:
         roles:
           admin: 'Administrador'
           employee: 'Funcionário'
+          technical_lead: 'Responsável técnico'

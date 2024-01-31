@@ -35,7 +35,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true
 
-  enum role: { admin: 'admin', employee: 'employee' }
+  enum role: { admin: 'admin', employee: 'employee', technical_lead: 'technical lead' }
 
   before_create :set_default_role
 
