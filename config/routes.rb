@@ -15,8 +15,11 @@ Rails.application.routes.draw do
   root to: 'external/home#index'
 
   namespace :manager do
+    resources :technical_reports
     resource :company
-    resources :clients
+    resources :clients do
+      resources :technical_reports, only: %i[new create], as: :client_technical_report
+    end
     resources :users
     resources :coolers do
       scope module: :coolers do

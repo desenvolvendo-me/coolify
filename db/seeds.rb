@@ -37,4 +37,6 @@ if Rails.env.development?
     company = (i <= 5) ? company_1 : company_2
     Client.create(name: FFaker::Company.name, company: company)
   end
+
+  TechnicalReport.create(client: Client.first, company: Company.first)
 end

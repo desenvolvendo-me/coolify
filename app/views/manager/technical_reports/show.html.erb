@@ -1,0 +1,10 @@
+<div class="flex flex-col items-center mt-6">
+<h1>Plano de Manutenção Operação e Controle - PMOC da Portaria 3523 Ministério da Saúde</h1>
+<p>Cliente: </p>
+<%= @technical_report.client.to_s %>
+<p>Responsabilidade técnica:</p>
+<%= @technical_report.company.cnpj %>
+<p>Cronograma de Manutenção Preventiva e Corretiva:</p>
+<span>Data: <%= Maintenance.first.date %></span>
+<span>Equipamento: <%= Equipment.first.tag %></span>
+</div>

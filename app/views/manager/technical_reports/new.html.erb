@@ -1,0 +1,7 @@
+<p>Selecione a manutenção:</p>
+
+<%= form_with model: @technical_report, url: manager_technical_reports_path, method: :post do |f| %>
+  <%= f.collection_select :maintenance_id, Maintenance.where(company: @client.company), :id, lambda { |maintenance| [I18n.l(maintenance.date, format: :default)] }, prompt: "Selecione uma manutenção" %>
+  <%= f.submit "Enviar" %>
+<% end %>
+
