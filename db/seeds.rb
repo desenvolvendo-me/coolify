@@ -13,11 +13,18 @@ if Rails.env.development?
   UserCreator.create_user('Administrador 1', 'admin2@limpar.com', :admin, company_2)
   UserCreator.create_user('Funcionário 1', 'employee1@limpar.com', :employee, company_1, 'avatar-2.jpg')
 
-  # coolers
+  # Clients
+  5.times do |i|
+    company = (i <= 2) ? company_1 : company_2
+    Client.create(name: FFaker::Company.name, company: company)
+  end
+
+  # Coolers
   10.times do |i|
     tag = FFaker::Vehicle.vin[0..5]
     company = (i <= 5) ? company_1 : company_2
-    Cooler.create(tag: tag, company: company)
+
+    Cooler.create(tag: tag, company: company, client: Client.order("RANDOM()").first)
   end
 
   # Maintenances

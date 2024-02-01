@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     resources :technical_reports
     resource :company
     resources :clients do
-      resources :technical_reports, only: %i[new create], as: :client_technical_report
+      post 'gerar_PMOC', to: 'technical_reports#create', as: :technical_report
     end
     resources :users
     resources :coolers do

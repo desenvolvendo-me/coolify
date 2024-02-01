@@ -1,10 +1,52 @@
-<div class="flex flex-col items-center mt-6">
-<h1>Plano de Manutenção Operação e Controle - PMOC da Portaria 3523 Ministério da Saúde</h1>
-<p>Cliente: </p>
-<%= @technical_report.client.to_s %>
-<p>Responsabilidade técnica:</p>
-<%= @technical_report.company.cnpj %>
-<p>Cronograma de Manutenção Preventiva e Corretiva:</p>
-<span>Data: <%= Maintenance.first.date %></span>
-<span>Equipamento: <%= Equipment.first.tag %></span>
-</div>
+<% @technical_report.client.coolers.each do |cooler| %>
+  <div class="flex flex-col items-center justify-center h-screen">
+    <p class="border-b-2 mb-4 p-2">Plano de Manutenção Operação e Controle - PMOC da Portaria 3523 Ministério da Saúde</p>
+    <table class="w-1/2 border border-collapse">
+      <thead>
+      <tr>
+        <th class="border bg-gray-200" colspan="2">Cliente:</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="border p-2 w-1/2"><span class="font-bold">Nome:</span></td>
+        <td class="border p-2 w-1/2"><%= @technical_report.client.to_s %></td>
+      </tr>
+      </tbody>
+    </table>
+
+    <table class="w-1/2 border border-collapse mt-4">
+      <thead>
+      <tr>
+        <th class="border bg-gray-200" colspan="2">Responsabilidade Técnica</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="border p-2 w-1/2"><span class="font-bold">CNPJ:</span></td>
+        <td class="border p-2 w-1/2"><%= @technical_report.company.cnpj %></td>
+      </tr>
+      </tbody>
+    </table>
+
+    <table class="w-1/2 border border-collapse mt-4">
+      <thead>
+      <tr>
+        <th class="border bg-gray-200" colspan="2">Cronograma de manutenção preventiva e corretiva</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="border p-2 w-1/2"><span class="font-bold">Modelo do equipamento:</span></td>
+        <td class="border p-2 w-1/2"><%= cooler.tag %></td>
+      </tr>
+      <tr>
+        <td class="border p-2 w-1/2"><span class="font-bold">Data da execução:</span></td>
+        <td class="border p-2 w-1/2"><%= I18n.l(FFaker::Time.between(Date.new(2023, 1, 1), Date.new(2024, 12, 31)), format: '%d/%m/%Y') %></td>
+      </tr>
+      </tbody>
+    </table>
+    <hr>
+  </div>
+<% end %>
+

@@ -30,6 +30,7 @@ pt-BR:
         save: 'Salvar'
         delete: 'Apagar'
         delete_confirm: 'Você tem certeza?'
+      cooler:
         new_maintenance: 'Nova Manutenção'
         maintenances: 'Manutenções'
       cooler:

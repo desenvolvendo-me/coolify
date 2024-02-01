@@ -6,36 +6,19 @@ module Manager
 
     def new
       @client = Client.find(params[:client_id])
-      @technical_report = @client ? @client.technical_reports.build : TechnicalReport.new
+      @technical_report = @client.technical_reports.build
     end
 
     def create
       @client = Client.find(params[:client_id])
-      @technical_report = @client ? @client.technical_reports.build(technical_report_params) : TechnicalReport.new(technical_report_params)
+      @technical_report = @client.technical_reports.build(client: @client, company: @client.company)
 
       if @technical_report.save
-        redirect_to @technical_report
+        redirect_to manager_technical_report_path(@technical_report)
       else
-        render :new
+        redirect_to manager_clients_path
       end
     end
-
-    def edit; end
-
-    def update
-      if @technical_report.update(technical_report_params)
-        redirect_to @technical_report, notice: 'Technical report was successfully updated.'
-      else
-        render :edit
-      end
-    end
-
-    def destroy
-      @technical_report.destroy
-      redirect_to technical_reports_path, notice: 'Technical report was successfully destroyed.'
-    end
-
-    def generate_reports; end
 
     private
 
