@@ -6,10 +6,15 @@
 #  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  company_id :integer
 #
 require 'rails_helper'
 
 RSpec.describe Client, type: :model do
+  describe 'association' do
+    it { should belong_to(:company) }
+  end
+
   describe 'validations' do
     it { should validate_presence_of(:name) }
   end

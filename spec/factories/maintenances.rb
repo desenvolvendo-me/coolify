@@ -7,6 +7,15 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  company_id :integer
+#  cooler_id  :integer
+#
+# Indexes
+#
+#  index_maintenances_on_cooler_id  (cooler_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (cooler_id => coolers.id)
 #
 FactoryBot.define do
   factory :maintenance do
@@ -15,5 +24,7 @@ FactoryBot.define do
                            Time.zone.local(2024, 1, 31))
                   .strftime('%d-%m-%Y')
     end
+    cooler
+    company
   end
 end

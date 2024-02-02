@@ -1,9 +1,0 @@
-pt-BR:
-  controllers:
-    manager:
-      goals:
-        create: 'Meta cadastrada com sucesso.'
-        update: 'Meta atualizada com sucesso.'
-        destroy: 'Meta apagada com sucesso.'
-        done: 'Meta finalizada com sucesso.'
-        dones: 'Metas finalizadas com sucesso.'

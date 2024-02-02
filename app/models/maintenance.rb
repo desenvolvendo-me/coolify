@@ -7,9 +7,19 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  company_id :integer
+#  cooler_id  :integer
+#
+# Indexes
+#
+#  index_maintenances_on_cooler_id  (cooler_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (cooler_id => coolers.id)
 #
 class Maintenance < ApplicationRecord
   acts_as_tenant :company
+  belongs_to :cooler
 
   validates :date, presence: true
 end

@@ -1,0 +1,41 @@
+pt-BR:
+  manager:
+    coolers:
+      index:
+        title: 'Equipamentos'
+        search: 'Pesquisar'
+        add_cooler: "Cadastrar equipamento"
+        filter_by: 'Filtrar'
+        filter_1: 'Filtro 1'
+        filter_2: 'Filtro 2'
+        actions: 'Ações'
+        action_1: "Ação 1"
+        pages:
+          showing: 'Mostrando'
+          of: 'de'
+        previous: 'anterior'
+        next: 'próximo'
+      new:
+        title: 'Cadastrando equipamento'
+        back: 'Voltar'
+        save: 'Salvar'
+      edit:
+        title: 'Editando Equipamento'
+        save: 'Salvar'
+        show: 'Mostrar'
+      show:
+        title: 'Detalhando Equipamento'
+        edit: 'Editar'
+        back: 'Voltar'
+        save: 'Salvar'
+        delete: 'Apagar'
+        delete_confirm: 'Você tem certeza?'
+        new_maintenance: 'Nova Manutenção'
+        maintenances: 'Manutenções'
+      cooler:
+        show: 'Mostrar'
+        edit: 'Editar'
+        delete: 'Apagar'
+        delete_confirm: 'Você tem certeza?'
+        new_maintenance: 'Nova Manutenção'
+        maintenances: 'Manutenções'

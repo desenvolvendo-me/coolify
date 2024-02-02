@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_24_220054) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_30_121906) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -72,6 +72,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_24_220054) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "company_id"
   end
 
   create_table "companies", force: :cascade do |t|
@@ -80,20 +81,11 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_24_220054) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "equipment", force: :cascade do |t|
+  create_table "coolers", force: :cascade do |t|
     t.string "tag"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "company_id"
-  end
-
-  create_table "goals", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.string "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.datetime "finished_at"
   end
 
   create_table "maintenances", force: :cascade do |t|
@@ -101,17 +93,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_24_220054) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "company_id"
-  end
-
-  create_table "tasks", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.string "status"
-    t.bigint "goal_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.datetime "finished_at"
-    t.index ["goal_id"], name: "index_tasks_on_goal_id"
+    t.integer "cooler_id"
+    t.index ["cooler_id"], name: "index_maintenances_on_cooler_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -136,4 +119,5 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_24_220054) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "maintenances", "coolers"
 end

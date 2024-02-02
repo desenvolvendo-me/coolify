@@ -1,0 +1,7 @@
+pt-BR:
+  manager:
+    coolers:
+      maintenances:
+        create: 'Manutenção Cadastrada com Sucesso.'
+        update: 'Manutenção Atualizada com Sucesso.'
+        destroy: 'Manutenção Apagada com Sucesso.'

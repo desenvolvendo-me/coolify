@@ -1,5 +1,6 @@
-<div class="flex flex-col">
+<div class="flex flex-col my-4">
   <div class="flex">
+    <%= form.input :cooler_id, collection: Cooler.all, label_method: :to_s, value_method: :id, prompt: "Selecione um equipamento" %>
     <%= form.input :date, as: :date, start_year: Date.today.year - 10, order: [:day, :month, :year] %>
   </div>
 </div>

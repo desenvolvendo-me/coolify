@@ -14,31 +14,16 @@ Rails.application.routes.draw do
 
   root to: 'external/home#index'
 
-  namespace :api do
-    namespace :goals do
-      namespace :done do
-        post :index
-        post :show
-        post :many
-      end
-    end
-  end
-
   namespace :manager do
     resource :company
     resources :clients
     resources :users
-    resources :equipments
-    resources :maintenances
-    resources :goals
-    namespace :goals do
-      namespace :done do
-        post :index
-        post :show
-        post :many
+    resources :coolers do
+      scope module: :coolers do
+        resources :maintenances
       end
     end
-
+    resources :maintenances
     get '', to: 'home#index', as: :home
   end
 

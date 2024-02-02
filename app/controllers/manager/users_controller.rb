@@ -18,13 +18,13 @@ module Manager
 
     def create
       @user = User.new(user_params)
-      @user.confirm
-      if @user.save(validate: false)
+      if @user.save
         @user.send_reset_password_instructions
         redirect_to manager_user_path(@user),
                     notice: t('.create')
       else
-        render :new
+        render :new,
+               status: :unprocessable_entity
       end
     end
 
@@ -41,7 +41,8 @@ module Manager
         redirect_to manager_user_path(@user),
                     notice: t('.update')
       else
-        render :edit
+        render :edit,
+               status: :unprocessable_entity
       end
     end
 

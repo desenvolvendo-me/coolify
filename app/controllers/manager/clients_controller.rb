@@ -5,7 +5,7 @@ module Manager
     def index
       @q = Client.ransack(params[:q])
       @clients = @q.result(distinct: true)
-      @clients = @clients.order('created_at').page(params[:page]).per(4)
+      @clients = @clients.order('created_at').page(params[:page])
     end
 
     def show; end

@@ -6,7 +6,6 @@ module Manager
       @q = Maintenance.ransack(params[:q])
       @maintenances = @q.result(distinct: true)
       @maintenances = @maintenances.order('date DESC').page(params[:page])
-                                   .per(4)
     end
 
     def show; end
@@ -67,7 +66,7 @@ module Manager
     end
 
     def maintenance_params
-      params.require(:maintenance).permit(:date)
+      params.require(:maintenance).permit(:date, :cooler_id)
     end
   end
 end

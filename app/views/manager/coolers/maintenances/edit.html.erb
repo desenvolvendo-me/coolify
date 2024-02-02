@@ -1,0 +1,18 @@
+<%= simple_form_for @maintenance, url: manager_cooler_maintenance_path(@cooler),
+                    html: { class: 'relative',
+                            data: {
+                              controller: 'nested-form',
+                              nested_form_wrapper_selector_value: '.nested-form-wrapper'
+                            }
+                    } do |form| %>
+  <div class="flex justify-between items-center mb-4">
+    <h1 class="font-bold text-4xl"><%= t('.title', cooler: @cooler) %></h1>
+    <div>
+      <%= form.submit t('.save'), class: "cursor-pointer mr-2 items-center justify-center text-white bg-blue-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800" %>
+      <%= link_to t('.show'), manager_cooler_maintenance_path(@cooler, @maintenance), class: "cursor-pointer mr-2 items-center justify-center text-white bg-blue-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800" %>
+      <%= link_to t('.back'), manager_cooler_maintenances_path(@cooler), class: "cursor-pointer mr-2 items-center justify-center text-white bg-blue-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800" %>
+    </div>
+  </div>
+  <%= render "form", maintenance: @maintenance, form: form %>
+<% end %>
+

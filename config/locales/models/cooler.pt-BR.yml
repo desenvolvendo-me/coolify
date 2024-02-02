@@ -1,0 +1,17 @@
+pt-BR:
+  activerecord:
+    errors:
+      models:
+        cooler:
+          attributes:
+            tag:
+              blank: 'nao pode ficar em branco'
+    models:
+      cooler:
+        one: 'Equipamento'
+        other: 'Equipamentos'
+    attributes:
+      cooler:
+        tag: 'TAG'
+        created_at: 'Criado em'
+        updated_at: 'Atualizado em'

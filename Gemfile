@@ -6,10 +6,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.5'
 
 gem 'activeadmin', '~> 2.14'
+gem 'acts_as_tenant'
 gem 'bootsnap', require: false
 gem 'chartkick', '~> 3.3.0'
 gem 'devise'
-gem 'image_processing', '>= 1.2'
 gem 'foreman'
 gem 'groupdate'
 gem 'image_processing', '>= 1.2'
@@ -33,8 +33,6 @@ gem 'turbo-rails'
 gem 'tzinfo-data',
     platforms: %i[mingw mswin x64_mingw jruby]
 gem 'yaml'
-gem 'json', '2.7.1'
-gem 'acts_as_tenant'
 
 group :development, :test do
   gem 'annotate'

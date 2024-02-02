@@ -6,8 +6,10 @@
 #  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  company_id :integer
 #
 class Client < ApplicationRecord
+  acts_as_tenant :company
   validates :name, presence: true
 
   def to_s
