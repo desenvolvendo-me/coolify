@@ -7,6 +7,7 @@
     <%= form.input :name, placeholder: ' ' %>
     <%= form.input :email, placeholder: ' ' %>
     <%= form.input :role, collection: User.roles.keys.map { |role| [User.human_enum_name(:role, role), role] }, include_blank: true %>
+    <%= form.input :cft, label_html: { style: 'text-transform: uppercase;' }, placeholder: ' ' %>
   </div>
 
   <div class="flex">
