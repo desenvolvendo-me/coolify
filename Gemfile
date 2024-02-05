@@ -3,9 +3,9 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.5'
+ruby '3.2.2'
 
-gem 'activeadmin', '~> 2.14'
+gem 'activeadmin', '~> 3.2'
 gem 'acts_as_tenant'
 gem 'bootsnap', require: false
 gem 'chartkick', '~> 3.3.0'
@@ -13,14 +13,13 @@ gem 'devise'
 gem 'foreman'
 gem 'groupdate'
 gem 'image_processing', '>= 1.2'
-gem 'importmap-rails'
 gem 'jbuilder'
 gem 'json', '2.7.1'
 gem 'kaminari'
 gem 'pg', '~> 1.2'
-gem 'puma', '~> 5.0'
-gem 'rails', '~> 7.0.4', '>= 7.0.4.2'
-gem 'ransack', '< 4.0'
+gem 'puma', '~> 6.0'
+gem 'rails', '~> 7.1.0'
+gem 'ransack', '~> 4.1', '>= 4.1.1'
 gem 'rswag-api'
 gem 'rswag-ui'
 gem 'sassc'
@@ -33,6 +32,7 @@ gem 'turbo-rails'
 gem 'tzinfo-data',
     platforms: %i[mingw mswin x64_mingw jruby]
 gem 'yaml'
+gem "railsui", github: "getrailsui/railsui", branch: "main"
 
 group :development, :test do
   gem 'annotate'
@@ -71,8 +71,11 @@ end
 group :test do
   gem 'capybara'
   gem 'rspec-benchmark'
-  gem 'selenium-webdriver'
-  gem 'webdrivers'
+  gem 'selenium-webdriver', '~> 4.10'
+  gem 'webdrivers', '~> 5.3'
 end
 
 gem 'sidekiq', '~> 7.2'
+
+# Use Redis for Action Cable
+gem "redis", "~> 4.0"

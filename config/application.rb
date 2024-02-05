@@ -8,6 +8,15 @@ Bundler.require(*Rails.groups)
 
 module StartupMissionBaseRails
   class Application < Rails::Application
+    config.generators do |g|
+      g.template_engine :railsui
+      g.fallbacks[:railsui] = :erb
+    end
+
+    config.to_prepare do
+      Devise::Mailer.layout "mailer"
+    end
+
     default_url_options[:host] = ENV["HOST"] || 'localhost:3000'
 
     config.active_job.queue_adapter = :sidekiq

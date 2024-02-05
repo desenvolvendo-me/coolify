@@ -1,13 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
 
-/*
+/* Custom components */
+@import "custom/custom.css";
 
-@layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
-  }
-}
-
-*/
+@import "tailwindcss/utilities";
+@import "tippy.js/dist/tippy.css";
