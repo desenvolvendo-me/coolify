@@ -20,7 +20,7 @@ if Rails.env.development?
   end
 
   # Coolers
-  10.times do |i|
+  30.times do |i|
     tag = FFaker::Vehicle.vin[0..5]
     company = (i <= 5) ? company_1 : company_2
 
