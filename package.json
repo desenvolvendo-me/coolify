@@ -15,6 +15,7 @@
     "photoswipe": "^5.4.3",
     "postcss-import": "^16.0.0",
     "postcss-nesting": "^12.0.2",
+    "stimulus-rails-nested-form": "^4.1.0",
     "stimulus-use": "^0.52.2",
     "tippy.js": "^6.3.7",
     "trix": "^2.0.9"
@@ -34,7 +35,7 @@
   },
   "scripts": {
     "build:css": "tailwindcss --postcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify",
-    "build": "esbuild app/javascript/. --bundle --sourcemap --outdir=app/assets/builds --public-path=assets"
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets"
   },
   "keywords": [],
   "author": "",

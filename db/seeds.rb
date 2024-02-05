@@ -9,9 +9,9 @@ if Rails.env.development?
   company_2 = Company.create(cnpj: FFaker::IdentificationBR.cnpj)
 
   # Users
-  UserCreator.create_user('Administrador 1', 'admin1@limpar.com', :admin, company_1, 'avatar-1.jpg')
-  UserCreator.create_user('Administrador 1', 'admin2@limpar.com', :admin, company_2)
-  UserCreator.create_user('Funcionário 1', 'employee1@limpar.com', :employee, company_1, 'avatar-2.jpg')
+  UserCreator.create_user('Administrador Heinemeier Hansson', 'admin1@limpar.com', :admin, company_1, 'avatar-1.jpg')
+  UserCreator.create_user('Administrador Heinemeier Hansson', 'admin2@limpar.com', :admin, company_2)
+  UserCreator.create_user('Funcionário Heinemeier Hansson', 'employee1@limpar.com', :employee, company_1, 'avatar-2.jpg')
 
   # coolers
   10.times do |i|

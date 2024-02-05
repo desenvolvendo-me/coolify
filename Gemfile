@@ -33,6 +33,7 @@ gem 'tzinfo-data',
     platforms: %i[mingw mswin x64_mingw jruby]
 gem 'yaml'
 gem "railsui", github: "getrailsui/railsui", branch: "main"
+gem 'name_of_person', '~> 1.1', '>= 1.1.3'
 
 group :development, :test do
   gem 'annotate'

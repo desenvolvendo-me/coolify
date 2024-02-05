@@ -20,7 +20,6 @@ Rails.application.routes.draw do
 	get 'admin/properties', to: 'page#properties'
 	get 'admin/dashboard', to: 'page#dashboard'
 	get 'pricing', to: 'page#pricing'
-	get 'about', to: 'page#about'
   if Rails.env.development? || Rails.env.test?
     mount Railsui::Engine, at: "/railsui"
   end
