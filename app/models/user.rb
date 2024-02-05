@@ -54,6 +54,6 @@ class User < ApplicationRecord
   def cft_presence
     return unless role == 'technical_lead' && cft.blank?
 
-    errors.add(:cft, 'is required for technical leads')
+    errors.add(:cft, :blank)
   end
 end

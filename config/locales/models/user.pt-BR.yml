@@ -6,6 +6,8 @@ pt-BR:
           attributes:
             name:
               blank: 'nao pode ficar em branco'
+            cft:
+              blank: 'é obrigatório para responsáveis técnicos'
     models:
       user:
         one: 'Usuário'
