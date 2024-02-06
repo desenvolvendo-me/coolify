@@ -30,13 +30,21 @@ if Rails.env.development?
   # Coolers
   ActsAsTenant.with_tenant(company_1) do
     Client.all.each do |client|
-      Cooler.create(tag: FFaker::Vehicle.vin[0..5], company: company_1, client: client)
+      num_coolers = rand(1..3)
+
+      num_coolers.times do
+        Cooler.create(tag: FFaker::Vehicle.vin[0..5], company: company_1, client: client)
+      end
     end
   end
 
   ActsAsTenant.with_tenant(company_2) do
     Client.all.each do |client|
-      Cooler.create(tag: FFaker::Vehicle.vin[0..5], company: company_2, client: client)
+      num_coolers = rand(1..3)
+
+      num_coolers.times do
+        Cooler.create(tag: FFaker::Vehicle.vin[0..5], company: company_2, client: client)
+      end
     end
   end
 
@@ -57,4 +65,10 @@ if Rails.env.development?
       end
     end
   end
+
+  # Technical Reports / PMOCs
+  ActsAsTenant.with_tenant(company_1) do
+    TechnicalReport.create(client: Client.all.sample, company: company_1)
+  end
+
 end
