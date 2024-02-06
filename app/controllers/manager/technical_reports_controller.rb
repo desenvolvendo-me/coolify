@@ -15,7 +15,7 @@ module Manager
       @technical_report = @client.technical_reports.build(client: @client, company: ActsAsTenant.current_tenant)
 
       if @technical_report.save
-        redirect_to manager_technical_report_path(@technical_report)
+        redirect_to manager_client_technical_report_path(@client, @technical_report)
       else
         redirect_to manager_clients_path
       end

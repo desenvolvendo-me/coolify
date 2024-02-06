@@ -6,6 +6,8 @@ pt-BR:
         search: 'Pesquisar'
         filter: 'Filtrar'
         actions: 'Ações'
+      technical_report:
+        show: 'Mostrar'
       show:
         title: 'Plano de Manutenção Operação e Controle - PMOC da Portaria 3523 Ministério da Saúde'
         client: 'Cliente'

@@ -15,10 +15,10 @@ Rails.application.routes.draw do
   root to: 'external/home#index'
 
   namespace :manager do
-    resources :technical_reports
+    resources :technical_reports, only: :index
     resource :company
     resources :clients do
-      resources :technical_reports, only: :create
+      resources :technical_reports, only: %i[create show]
     end
     resources :users
     resources :coolers do

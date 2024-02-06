@@ -10,7 +10,7 @@
       <% if action_name != "show" %>
         <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="<%= "technical_report#{technical_report.id}" %>-dropdown-button">
           <li>
-            <%= link_to 'mostrar', manager_technical_report_path(technical_report), class: "block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" %>
+            <%= link_to t('.show'), manager_client_technical_report_path(technical_report.client, technical_report), class: "block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" %>
           </li>
         </ul>
       <% end %>
