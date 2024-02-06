@@ -18,3 +18,5 @@ pt-BR:
       menu: "Manutenções"
     menu_cooler:
       menu: "Equipamentos"
+    menu_technical_report:
+      menu: 'PMOCs'

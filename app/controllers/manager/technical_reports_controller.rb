@@ -7,6 +7,7 @@ module Manager
       @technical_reports = @q.result(distinct: true)
       @technical_reports = @technical_reports.order('id DESC').page(params[:page])
     end
+
     def show; end
 
     def create

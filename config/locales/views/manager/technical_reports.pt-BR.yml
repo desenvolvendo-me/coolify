@@ -1,6 +1,11 @@
 pt-BR:
   manager:
     technical_reports:
+      index:
+        title: 'PMOCs'
+        search: 'Pesquisar'
+        filter: 'Filtrar'
+        actions: 'Ações'
       show:
         title: 'Plano de Manutenção Operação e Controle - PMOC da Portaria 3523 Ministério da Saúde'
         client: 'Cliente'
@@ -9,4 +14,3 @@ pt-BR:
         maintenance_timeline: 'Cronograma de manutenção preventiva e corretiva'
         cooler_model: 'Modelo do equipamento'
         execution_date: 'Data da execução'
-
