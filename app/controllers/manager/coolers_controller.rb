@@ -46,7 +46,7 @@ module Manager
     end
 
     def cooler_params
-      params.require(:cooler).permit(:tag)
+      params.require(:cooler).permit(:tag, :client_id)
     end
   end
 end

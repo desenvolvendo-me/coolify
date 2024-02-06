@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Manager::MaintenancesController, type: :controller do
   let(:admin_user) { create(:user, role: :admin) }
-  let(:cooler) { create(:cooler, company: admin_user.company) }
+  let(:client) { create(:client) }
+  let(:cooler) { create(:cooler, company: admin_user.company, client: client) }
   let(:maintenance) { create(:maintenance, company: admin_user.company, cooler: cooler) }
   let(:valid_attributes) { { date: Date.strptime('31-01-2024', '%d-%m-%Y'), cooler_id: cooler.id } }
   let(:invalid_attributes) { { date: nil } }
@@ -23,9 +24,9 @@ RSpec.describe Manager::MaintenancesController, type: :controller do
     it 'returns the maintenances searched correctly' do
       # DADO
       maintenance1 = create(:maintenance,
-                            date: Date.strptime('31-01-2024', '%d-%m-%Y'), company: admin_user.company)
+                            date: Date.strptime('31-01-2024', '%d-%m-%Y'), company: admin_user.company, cooler: cooler)
       maintenance2 = create(:maintenance,
-                            date: Date.strptime('01-02-2024', '%d-%m-%Y'), company: admin_user.company)
+                            date: Date.strptime('01-02-2024', '%d-%m-%Y'), company: admin_user.company, cooler: cooler)
 
       # QUANDO
       get :index,
@@ -39,7 +40,7 @@ RSpec.describe Manager::MaintenancesController, type: :controller do
     end
 
     it 'excludes non-matching results' do
-      create(:maintenance, date: Date.strptime('20-01-2024', '%d-%m-%Y'), company: admin_user.company)
+      create(:maintenance, date: Date.strptime('20-01-2024', '%d-%m-%Y'), company: admin_user.company, cooler: cooler)
 
       get :index,
           params: {
@@ -129,7 +130,7 @@ RSpec.describe Manager::MaintenancesController, type: :controller do
 
   describe 'DELETE #destroy' do
     it 'destroys the requested maintenance' do
-      maintenance = create(:maintenance)
+      maintenance = create(:maintenance, cooler: cooler)
       expect do
         delete :destroy, params: { id: maintenance.id }
       end.to change(Maintenance, :count).by(-1)
