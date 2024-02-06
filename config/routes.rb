@@ -16,8 +16,12 @@ Rails.application.routes.draw do
 
   namespace :manager do
     resource :company
-    resources :clients
     resources :users
+    resources :clients do
+      scope module: :clients do
+        resources :coolers
+      end
+    end
     resources :coolers do
       scope module: :coolers do
         resources :maintenances
