@@ -1,6 +1,6 @@
 module Manager
   class ClientsController < InternalController
-    before_action :set_client, only: %i[show edit update destroy build_technical_report]
+    before_action :set_client, only: %i[show edit update destroy]
 
     def index
       @q = Client.ransack(params[:q])
@@ -43,11 +43,6 @@ module Manager
 
       redirect_to manager_clients_path,
                   notice: t('.success')
-    end
-
-    def build_technical_report
-      TechnicalReportBuilder.call(@client)
-      redirect_to manager_technical_report_path
     end
 
     private
