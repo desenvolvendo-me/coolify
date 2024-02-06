@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     resources :technical_reports
     resource :company
     resources :clients do
-      post 'gerar_PMOC', to: 'technical_reports#create', as: :technical_report
+      resources :technical_reports, only: :create
     end
     resources :users
     resources :coolers do

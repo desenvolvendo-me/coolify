@@ -1,17 +1,17 @@
 module Manager
-  class TechnicalReportsController < ApplicationController
-    before_action :set_technical_report, only: %i[show edit update destroy]
+  class TechnicalReportsController < InternalController
+    before_action :set_technical_report, only: %i[show]
 
-    def show; end
-
-    def new
-      @client = Client.find(params[:client_id])
-      @technical_report = @client.technical_reports.build
+    def index
+      @q = TechnicalReport.ransack(params[:q])
+      @technical_reports = @q.result(distinct: true)
+      @technical_reports = @technical_reports.order('id DESC').page(params[:page])
     end
+    def show; end
 
     def create
       @client = Client.find(params[:client_id])
-      @technical_report = @client.technical_reports.build(client: @client, company: @client.company)
+      @technical_report = @client.technical_reports.build(client: @client, company: ActsAsTenant.current_tenant)
 
       if @technical_report.save
         redirect_to manager_technical_report_path(@technical_report)

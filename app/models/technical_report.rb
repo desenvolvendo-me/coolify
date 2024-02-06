@@ -10,13 +10,14 @@
 #
 # Indexes
 #
-#  index_technical_reports_on_client_id  (client_id)
+#  index_technical_reports_on_client_id   (client_id)
+#  index_technical_reports_on_company_id  (company_id)
 #
 # Foreign Keys
 #
 #  fk_rails_...  (client_id => clients.id)
 #
 class TechnicalReport < ApplicationRecord
-  belongs_to :client
   acts_as_tenant :company
+  belongs_to :client
 end
