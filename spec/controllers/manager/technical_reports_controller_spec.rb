@@ -16,7 +16,7 @@ RSpec.describe Manager::TechnicalReportsController, type: :controller do
         post :create, params: { client_id: client.id }
       end.to change(TechnicalReport, :count).by(1)
 
-      expect(response).to redirect_to(manager_technical_report_path(TechnicalReport.last))
+      expect(response).to redirect_to(manager_client_technical_report_path(client, TechnicalReport.last))
     end
 
     it 'redirects to manager_clients_path on failure' do
