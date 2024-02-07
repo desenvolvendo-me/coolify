@@ -1,5 +1,8 @@
 class PageController < ApplicationController
 
+	def about
+	end
+
 	def account_preferences
 		render layout: 'admin'
 	end
@@ -74,8 +77,5 @@ class PageController < ApplicationController
 
 	def dashboard
 		render layout: 'admin'
-	end
-
-	def pricing
 	end
 end

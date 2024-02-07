@@ -1,5 +1,6 @@
 require 'sidekiq/web'
 Rails.application.routes.draw do
+	get 'about', to: 'page#about'
 	get 'admin/account_preferences', to: 'page#account_preferences'
 	get 'admin/account_notifications', to: 'page#account_notifications'
 	get 'admin/account_payouts', to: 'page#account_payouts'
@@ -19,7 +20,6 @@ Rails.application.routes.draw do
 	get 'admin/inbox', to: 'page#inbox'
 	get 'admin/properties', to: 'page#properties'
 	get 'admin/dashboard', to: 'page#dashboard'
-	get 'pricing', to: 'page#pricing'
   if Rails.env.development? || Rails.env.test?
     mount Railsui::Engine, at: "/railsui"
   end

@@ -3,6 +3,7 @@ application_name: Coolify
 support_email: dev.philipe@outlook.com
 theme: shepherd
 pages:
+- about
 - account_notifications
 - account_payment_methods
 - account_payouts
@@ -19,7 +20,6 @@ pages:
 - inbox
 - insights
 - new_booking
-- pricing
 - privacy_policy
 - properties
 - terms
