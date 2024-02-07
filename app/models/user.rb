@@ -35,7 +35,7 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :company
 
   validates :name, presence: true
-  validate :cft_presence
+  validates :cft, cft: true
 
   enum role: { admin: 'admin', employee: 'employee', technical_lead: 'technical lead' }
 
@@ -49,11 +49,5 @@ class User < ApplicationRecord
 
   def set_default_role
     self.role ||= :admin
-  end
-
-  def cft_presence
-    return unless role == 'technical_lead' && cft.blank?
-
-    errors.add(:cft, :blank)
   end
 end
