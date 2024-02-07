@@ -1,0 +1,7 @@
+pt-BR:
+  manager:
+    clients:
+      coolers:
+        create: 'Equipamento Cadastrada com Sucesso.'
+        update: 'Equipamento Atualizada com Sucesso.'
+        destroy: 'Equipamento Apagada com Sucesso.'

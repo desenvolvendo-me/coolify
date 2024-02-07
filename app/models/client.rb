@@ -10,6 +10,8 @@
 #
 class Client < ApplicationRecord
   acts_as_tenant :company
+  has_many :coolers
+
   validates :name, presence: true
 
   def to_s
