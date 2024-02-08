@@ -8,8 +8,6 @@ pt-BR:
         filter_by: 'Filtrar'
         filter_1: 'Filtro 1'
         filter_2: 'Filtro 2'
-        date: 'Data'
-        cooler: 'Equipamento'
         actions: "Ações"
         action_1: "Ação 1"
         pages:

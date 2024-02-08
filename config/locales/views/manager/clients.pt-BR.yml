@@ -17,6 +17,8 @@ pt-BR:
         edit: 'Editar'
         delete: 'Apagar'
         delete_confirm: 'Você tem certeza?'
+        new_cooler: 'Novo Equipamento'
+        coolers: 'Equipamentos'
       edit:
         title: 'Editando cliente'
         show: 'Mostrar'

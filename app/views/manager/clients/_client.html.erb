@@ -22,6 +22,14 @@
             <%= link_to t('.edit'), edit_manager_client_path(client), data: { test_id: "client-index-edit-link" }, class: "block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" %>
           </li>
         </ul>
+        <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="<%= client.id %>-dropdown-button">
+          <li>
+            <%= link_to t('.new_cooler'), new_manager_client_cooler_path(client), class: "block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" %>
+          </li>
+          <li>
+            <%= link_to t('.coolers'), manager_client_coolers_path(client), class: "block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" %>
+          </li>
+        </ul>
         <div class="py-1">
           <%= link_to t('.delete'), manager_client_path(client),
                       data: { turbo_method: :delete, turbo_confirm: t('.delete_confirm') }, class: "block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white" %>

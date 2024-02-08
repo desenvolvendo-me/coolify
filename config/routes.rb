@@ -17,10 +17,13 @@ Rails.application.routes.draw do
   namespace :manager do
     resources :technical_reports, only: :index
     resource :company
+    resources :users
     resources :clients do
+      scope module: :clients do
+        resources :coolers
+      end
       resources :technical_reports, only: %i[create show]
     end
-    resources :users
     resources :coolers do
       scope module: :coolers do
         resources :maintenances

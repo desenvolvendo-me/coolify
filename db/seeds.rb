@@ -70,5 +70,4 @@ if Rails.env.development?
   ActsAsTenant.with_tenant(company_1) do
     TechnicalReport.create(client: Client.all.sample, company: company_1)
   end
-
 end
