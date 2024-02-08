@@ -1,44 +1,4 @@
 require 'rails_helper'
-# class CftValidatable
-#   include ActiveModel::Model
-#
-#   attr_accessor :cft, :role
-#
-#   validates :cft, cft: true
-# end
-#
-# RSpec.describe CftValidator do
-#   context 'when the user is a technical lead and does not inform his cft' do
-#     let(:technical_lead_user) { CftValidatable.new(cft: nil, role: 'technical_lead') }
-#
-#     it 'is invalid' do
-#       expect(technical_lead_user).not_to be_valid
-#     end
-#   end
-#
-#   context 'when the user is not a technical lead and does not inform his cft' do
-#     let(:admin_user) { CftValidatable.new(cft: nil, role: 'admin') }
-#     let(:employee_user) { CftValidatable.new(cft: nil, role: 'employee') }
-#
-#     it 'id valid' do
-#       expect(admin_user).to be_valid
-#       expect(employee_user).to be_valid
-#     end
-#   end
-#
-#   context 'when the user informs his cft' do
-#     let(:technical_lead_user) { CftValidatable.new(cft: FFaker::Lorem.characters(10), role: 'technical_lead') }
-#     let(:admin_user) { CftValidatable.new(cft: FFaker::Lorem.characters(10), role: 'admin') }
-#     let(:employee_user) { CftValidatable.new(cft: FFaker::Lorem.characters(10), role: 'employee') }
-#
-#     it 'is valid' do
-#       expect(technical_lead_user).to be_valid
-#       expect(admin_user).to be_valid
-#       expect(employee_user).to be_valid
-#     end
-#   end
-#
-# end
 
 RSpec.describe CftValidator do
   subject(:user) do
