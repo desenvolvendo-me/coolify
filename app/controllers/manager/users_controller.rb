@@ -63,7 +63,7 @@ module Manager
 
     def user_params
       params.require(:user).permit(:name, :avatar, :email, :password,
-                                   :password_confirmation, :role)
+                                   :password_confirmation, :role, :cft)
     end
   end
 end

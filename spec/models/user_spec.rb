@@ -4,6 +4,7 @@
 #
 #  id                     :bigint           not null, primary key
 #  avatar                 :string
+#  cft                    :string
 #  confirmation_sent_at   :datetime
 #  confirmation_token     :string
 #  confirmed_at           :datetime
@@ -29,5 +30,9 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe 'associations' do
     it { should belong_to(:company) }
+  end
+
+  describe 'validations' do
+    it { should validate_presence_of(:name) }
   end
 end
