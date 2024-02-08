@@ -1,5 +1,6 @@
 <div class="flex flex-col">
   <div class="flex">
+    <%= form.input :client_id, collection: Client.all, label_method: :to_s, value_method: :id, prompt: "Selecione um cliente" %>
     <%= form.input :tag, placeholder: ' ' %>
   </div>
 </div>

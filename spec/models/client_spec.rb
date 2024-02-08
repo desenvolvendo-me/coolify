@@ -13,6 +13,7 @@ require 'rails_helper'
 RSpec.describe Client, type: :model do
   describe 'association' do
     it { should belong_to(:company) }
+    it { should have_many(:coolers) }
   end
 
   describe 'validations' do

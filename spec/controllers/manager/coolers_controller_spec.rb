@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Manager::CoolersController, type: :controller do
   let(:admin_user) { create(:user, role: :admin) }
   let(:cooler) { create(:cooler, company: admin_user.company) }
-  let(:valid_attributes) { { tag: '001' } }
+  let(:valid_attributes) { { tag: '001', client_id: cooler.client.id } }
   let(:invalid_attributes) { { tag: '' } }
 
   before do
@@ -58,7 +58,7 @@ RSpec.describe Manager::CoolersController, type: :controller do
       it 'creates a new cooler' do
         expect do
           post :create, params: { cooler: valid_attributes }
-        end.to change(Cooler, :count).by(1)
+        end.to change(Cooler, :count).by(2)
       end
 
       it 'redirects to the created cooler' do

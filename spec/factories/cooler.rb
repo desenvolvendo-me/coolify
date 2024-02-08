@@ -11,5 +11,6 @@
 FactoryBot.define do
   factory :cooler do
     tag { %w[S2AR-013 RAR-001 FAR-004 GAR-001 MAR-003A].sample }
+    client
   end
 end
