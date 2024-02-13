@@ -41,8 +41,6 @@ class User < ApplicationRecord
 
   before_create :set_default_role
 
-  scope :technical_leads, -> { where(role: 'technical lead') }
-
   def to_s
     name
   end
