@@ -3,7 +3,9 @@ module Manager
     before_action :set_maintenance_plan, only: %i[show edit update destroy]
 
     def index
-      @maintenance_plan = MaintenancePlan.all
+      @q = MaintenancePlan.ransack(params[:q])
+      @maintenance_plans = @q.result(distinct: true)
+      @maintenance_plans = @maintenance_plans.order('created_at').page(params[:page]).per(4)
     end
 
     def show; end
