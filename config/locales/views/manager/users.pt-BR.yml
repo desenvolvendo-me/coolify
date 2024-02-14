@@ -7,6 +7,7 @@ pt-BR:
         filter: 'Filtrar'
         filter_1: 'Administradores'
         filter_2: 'Funcionários'
+        filter_3: 'Responsáveis técnicos'
         actions: 'Ações'
         pages:
           showing: 'Mostrando'

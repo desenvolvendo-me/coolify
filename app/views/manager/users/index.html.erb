@@ -36,6 +36,11 @@
                       <%= t('.filter_2') %>
                     </li>
                   <% end %>
+                  <%= link_to manager_users_path(q: filter_q('technical lead')) do %>
+                    <li class="block py-2 px-4 text-sm font-medium text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+                      <%= t('.filter_3') %>
+                    </li>
+                  <% end %>
                 </ul>
               </div>
             </div>
