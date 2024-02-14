@@ -1,0 +1,37 @@
+pt-BR:
+  manager:
+    clients:
+      coolers:
+        index:
+          title: 'Equipamentos de %{client}'
+          search: 'Pesquisar'
+          add_cooler: "Criar Equipamento"
+          filter_by: 'Filtrar'
+          filter_1: 'Filtro 1'
+          filter_2: 'Filtro 2'
+          actions: "Ações"
+          action_1: "Ação 1"
+          pages:
+            showing: 'Mostrando'
+            of: 'de'
+          previous: 'anterior'
+          next: 'próximo'
+        cooler:
+          show: 'Mostrar'
+          edit: 'Editar'
+          delete: 'Apagar'
+          delete_confirm: 'Você tem certeza?'
+        show:
+          title: 'Detalhando Equipamento de %{client}'
+          back: 'Voltar'
+          edit: 'Editar'
+          delete: 'Apagar'
+          delete_confirm: 'Você tem certeza?'
+        new:
+          title: 'Cadastrando Equipamento de %{client}'
+          save: 'Salvar'
+        edit:
+          title: 'Editando Equipamento de %{client}'
+          save: 'Salvar'
+          show: 'Mostrar'
+          back: 'Voltar'
