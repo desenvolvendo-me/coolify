@@ -1,5 +1,6 @@
 require 'sidekiq/web'
 Rails.application.routes.draw do
+	get 'pricing', to: 'page#pricing'
 	get 'about', to: 'page#about'
 	get 'admin/account_preferences', to: 'page#account_preferences'
 	get 'admin/account_notifications', to: 'page#account_notifications'
