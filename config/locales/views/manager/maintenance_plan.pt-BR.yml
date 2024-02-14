@@ -1,0 +1,32 @@
+pt-BR:
+  manager:
+    maintenance_plans:
+      index:
+        title: 'Planos de manutenção'
+        search: 'Pesquisar'
+        register_maintenance_plan: 'Cadastrar Plano de manutenção'
+        name: 'Nome'
+        filter_by: 'Filtrar'
+        filter_1: 'Filtro 1'
+        filter_2: 'Filtro 2'
+        actions: 'Ações'
+        action_1: "Ação 1"
+      maintenance_plan:
+        show: 'Mostrar'
+        edit: 'Editar'
+        delete: 'Apagar'
+        delete_confirm: 'Você tem certeza?'
+      edit:
+        title: 'Editando Plano de manutenção'
+        show: 'Mostrar'
+        go_back: 'Voltar'
+      new:
+        title: 'Cadastrando Plano de manutenção'
+        go_back: 'Voltar'
+      show:
+        title: 'Detalhes do Plano de manutenção'
+        go_back: 'Voltar'
+        edit: 'Editar'
+        delete: 'Apagar'
+        delete_confirm: 'Você tem certeza?'
+

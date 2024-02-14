@@ -1,11 +1,11 @@
 <div class="relative">
   <div class="flex justify-between items-center mb-4">
-    <h1 class="font-bold text-4xl">Detalhes do plano de manutenção</h1>
+    <h1 class="font-bold text-4xl"><%= t('.title') %></h1>
     <div>
-      <%= link_to 'Editar', edit_manager_maintenance_plan_path(@maintenance_plan), class: "mr-2 items-center justify-center focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900" %>
-      <%= link_to 'Deletar', manager_maintenance_plan_path(@maintenance_plan),
-                  data: { turbo_method: :delete, turbo_confirm: 'Você tem certeza?' }, class: "mr-2 items-center justify-center focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900" %>
-      <%= link_to 'Voltar', manager_maintenance_plans_path, class: "mr-2 items-center justify-center text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" %>
+      <%= link_to t('.edit'), edit_manager_maintenance_plan_path(@maintenance_plan), class: "mr-2 items-center justify-center focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900" %>
+      <%= link_to t('.delete'), manager_maintenance_plan_path(@maintenance_plan),
+                  data: { turbo_method: :delete, turbo_confirm: t('.delete_confirm') }, class: "mr-2 items-center justify-center focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900" %>
+      <%= link_to t('.go_back'), manager_maintenance_plans_path, class: "mr-2 items-center justify-center text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" %>
     </div>
   </div>
 

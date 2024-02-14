@@ -18,9 +18,10 @@ module Manager
       @maintenance_plan = MaintenancePlan.new(maintenance_plan_params)
 
       if @maintenance_plan.save
-        redirect_to manager_maintenance_plan_path(@maintenance_plan), notice: 'Successfully registered maintenance plan.'
+        redirect_to manager_maintenance_plan_path(@maintenance_plan), notice: t('.success')
       else
-        render :new
+        render :new,
+               status: :unprocessable_entity
       end
     end
 
@@ -28,15 +29,16 @@ module Manager
 
     def update
       if @maintenance_plan.update(maintenance_plan_params)
-        redirect_to manager_maintenance_plan_path(@maintenance_plan), notice: 'Successfully updated maintenance plan.'
+        redirect_to manager_maintenance_plan_path(@maintenance_plan), notice: t('.success')
       else
-        render :edit
+        render :edit,
+               status: :unprocessable_entity
       end
     end
 
     def destroy
       @maintenance_plan.destroy
-      redirect_to manager_maintenance_plans_path, notice: 'Successfully deleted maintenance plan.'
+      redirect_to manager_maintenance_plans_path, notice: t('.success')
     end
 
     private

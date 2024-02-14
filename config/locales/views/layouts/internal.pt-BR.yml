@@ -17,5 +17,7 @@ pt-BR:
       menu: "Clientes"
     menu_maintenance:
       menu: "Manutenções"
+    menu_maintenance_plan:
+      menu: "Planos de Manutenção"
     menu_cooler:
       menu: "Equipamentos"
