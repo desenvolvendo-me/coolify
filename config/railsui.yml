@@ -2,40 +2,19 @@
 application_name: Coolify
 support_email: dev.philipe@outlook.com
 theme: shepherd
-pages:
-- about
-- account_notifications
-- account_payment_methods
-- account_payouts
-- account_preferences
-- api
-- booking
-- bookings
-- calendar
-- changelog
-- contact
-- dashboard
-- edit_booking
-- help_center
-- inbox
-- insights
-- new_booking
-- privacy_policy
-- properties
-- terms
 colors:
   primary:
-    '50': "#fff1f2"
-    '100': "#ffe4e6"
-    '200': "#fecdd3"
-    '300': "#fda4af"
-    '400': "#fb7185"
-    '500': "#f43f5e"
-    '600': "#e11d48"
-    '700': "#be123c"
-    '800': "#9f1239"
-    '900': "#881337"
-    '950': "#4c0519"
+    '50': "#eaf6fc"
+    '100': "#c1e3f7"
+    '200': "#98d1f2"
+    '300': "#6fbfed"
+    '400': "#46ace7"
+    '500': "#1d9ae2"
+    '600': "#187eb9"
+    '700': "#126290"
+    '800': "#0d4667"
+    '900': "#082a3e"
+    '950': "#030e15"
   secondary:
     '50': "#eaf6fc"
     '100': "#c1e3f7"
@@ -48,3 +27,25 @@ colors:
     '800': "#0d4667"
     '900': "#082a3e"
     '950': "#030e15"
+pages:
+  - about
+  - account_notifications
+  - account_payment_methods
+  - account_payouts
+  - account_preferences
+  - api
+  - booking
+  - bookings
+  - calendar
+  - changelog
+  - contact
+  - dashboard
+  - edit_booking
+  - help_center
+  - inbox
+  - insights
+  - new_booking
+  - pricing
+  - privacy_policy
+  - properties
+  - terms
