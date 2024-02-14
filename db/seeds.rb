@@ -9,9 +9,10 @@ if Rails.env.development?
   company_2 = Company.create(cnpj: FFaker::IdentificationBR.cnpj)
 
   # Users
-  UserCreator.create_user('Administrador 1', 'admin1@limpar.com', :admin, company_1, 'avatar-1.jpg')
+  UserCreator.create_user('Administrador 1', 'admin1@limpar.com', :admin, company_1, avatar_file: 'avatar-2.jpg')
   UserCreator.create_user('Administrador 1', 'admin2@limpar.com', :admin, company_2)
-  UserCreator.create_user('Funcionário 1', 'employee1@limpar.com', :employee, company_1, 'avatar-2.jpg')
+  UserCreator.create_user('Funcionário 1', 'employee1@limpar.com', :employee, company_1, avatar_file: 'avatar-2.jpg')
+  UserCreator.create_user('Funcionário 2', 'employee2@limpar.com', :technical_lead, company_1, avatar_file: 'avatar-2.jpg', cft: FFaker::Lorem.characters(10))
 
   # Clients
   ActsAsTenant.with_tenant(company_1) do

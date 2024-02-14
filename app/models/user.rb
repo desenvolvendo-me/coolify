@@ -4,6 +4,7 @@
 #
 #  id                     :bigint           not null, primary key
 #  avatar                 :string
+#  cft                    :string
 #  confirmation_sent_at   :datetime
 #  confirmation_token     :string
 #  confirmed_at           :datetime
@@ -34,8 +35,9 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :company
 
   validates :name, presence: true
+  validates :cft, cft: true
 
-  enum role: { admin: 'admin', employee: 'employee' }
+  enum role: { admin: 'admin', employee: 'employee', technical_lead: 'technical lead' }
 
   before_create :set_default_role
 
