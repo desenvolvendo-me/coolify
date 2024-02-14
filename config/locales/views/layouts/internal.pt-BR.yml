@@ -9,6 +9,7 @@ pt-BR:
       sign_out: "Sair da conta"
     menu_manager:
       menu: "Gestão"
+    menu_user:
       user: 'Usuários'
     menu_generate_report:
       menu: 'Gerar Laudo'
