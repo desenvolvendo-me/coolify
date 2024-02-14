@@ -1,7 +1,5 @@
 <%= simple_form_for([:manager, @maintenance_plan], url: manager_maintenance_plans_path,
                     html: { class: 'relative' }) do |form| %>
-  <%= form.error_notification %>
-
   <div class="flex justify-between items-center mb-4">
     <h1 class="font-bold text-4xl"><%= t('.title') %></h1>
     <div>
