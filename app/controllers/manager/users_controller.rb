@@ -7,7 +7,7 @@ module Manager
     def index
       @q = User.where.not(id: current_user).ransack(params[:q])
       @users = @q.result(distinct: true)
-      @users = @users.order('created_at').page(params[:page]).per(4)
+      @users = @users.order('created_at').page(params[:page])
     end
 
     def show; end

@@ -5,7 +5,7 @@ module Manager
     def index
       @q = MaintenancePlan.ransack(params[:q])
       @maintenance_plans = @q.result(distinct: true)
-      @maintenance_plans = @maintenance_plans.order('created_at').page(params[:page]).per(4)
+      @maintenance_plans = @maintenance_plans.order('created_at').page(params[:page])
     end
 
     def show; end
