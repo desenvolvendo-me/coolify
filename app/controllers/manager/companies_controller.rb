@@ -9,7 +9,7 @@ module Manager
     def update
       if @company.update(company_params)
         redirect_to manager_company_url,
-                    notice: t('.success')
+                    notice: t('.update')
       else
         render :edit
       end
@@ -18,7 +18,7 @@ module Manager
     def destroy
       @company.destroy
       redirect_to manager_home_url,
-                  notice: t('.success')
+                  notice: t('.destroy')
     end
 
     private

@@ -1,0 +1,53 @@
+<% @technical_report.client.coolers.each do |cooler| %>
+  <% cooler.maintenances.each do |maintenance| %>
+    <div class="flex flex-col items-center justify-center h-screen">
+      <p class="border-b-2 mb-4 p-2"><%= t('.title') %></p>
+      <table class="w-1/2 border border-collapse">
+        <thead>
+        <tr>
+          <th class="border bg-gray-200" colspan="2"><%= t('.client') %></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td class="border p-2 w-1/2"><span class="font-bold"><%= t('.name') %>:</span></td>
+          <td class="border p-2 w-1/2"><%== @technical_report.client.to_s %></td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="w-1/2 border border-collapse mt-4">
+        <thead>
+        <tr>
+          <th class="border bg-gray-200" colspan="2"><%= t('.technical_responsibility') %></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td class="border p-2 w-1/2"><span class="font-bold"><%= I18n.t('activerecord.attributes.company.cnpj') %>:</span></td>
+          <td class="border p-2 w-1/2"><%= @technical_report.company.cnpj %></td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table class="w-1/2 border border-collapse mt-4">
+        <thead>
+        <tr>
+          <th class="border bg-gray-200" colspan="2"><%= t('.maintenance_timeline') %></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td class="border p-2 w-1/2"><span class="font-bold"><%= t('.cooler_model') %>:</span></td>
+          <td class="border p-2 w-1/2"><%= maintenance.cooler.tag %></td>
+        </tr>
+        <tr>
+          <td class="border p-2 w-1/2"><span class="font-bold"><%= t('.execution_date') %>:</span></td>
+          <td class="border p-2 w-1/2"><%= I18n.l(maintenance.date) %></td>
+        </tr>
+        </tbody>
+      </table>
+      <hr>
+    </div>
+  <% end %>
+<% end %>

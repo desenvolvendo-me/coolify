@@ -2,8 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Manager::CoolersController, type: :controller do
   let(:admin_user) { create(:user, role: :admin) }
-  let(:cooler) { create(:cooler, company: admin_user.company) }
-  let(:valid_attributes) { { tag: '001', client_id: cooler.client.id } }
+  let(:client) { create(:client) }
+  let(:cooler) { create(:cooler, company: admin_user.company, client: client) }
+  let(:valid_attributes) { { tag: '001', client_id: client.id } }
   let(:invalid_attributes) { { tag: '' } }
 
   before do
@@ -18,7 +19,7 @@ RSpec.describe Manager::CoolersController, type: :controller do
     end
 
     it 'excludes non-matching results' do
-      create(:cooler, tag: '987')
+      create(:cooler, tag: '987', client: client)
 
       get :index,
           params: {
@@ -58,7 +59,7 @@ RSpec.describe Manager::CoolersController, type: :controller do
       it 'creates a new cooler' do
         expect do
           post :create, params: { cooler: valid_attributes }
-        end.to change(Cooler, :count).by(2)
+        end.to change(Cooler, :count).by(1)
       end
 
       it 'redirects to the created cooler' do
@@ -99,7 +100,7 @@ RSpec.describe Manager::CoolersController, type: :controller do
 
   describe 'DELETE #destroy' do
     it 'destroys the requested cooler' do
-      cooler = create(:cooler)
+      cooler = create(:cooler, client: client)
       expect do
         delete :destroy, params: { id: cooler.id }
       end.to change(Cooler, :count).by(-1)

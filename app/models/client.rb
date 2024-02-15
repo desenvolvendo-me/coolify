@@ -10,8 +10,8 @@
 #
 class Client < ApplicationRecord
   acts_as_tenant :company
-  has_many :coolers
-
+  has_many :coolers, dependent: :destroy
+  has_many :technical_reports, dependent: :destroy
   validates :name, presence: true
 
   def to_s

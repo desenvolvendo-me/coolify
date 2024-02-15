@@ -12,6 +12,7 @@ pt-BR:
         actions: 'Ações'
         action_1: "Ação 1"
       client:
+        generate_technical_report: 'Gerar Laudo / PMOC'
         show: 'Mostrar'
         edit: 'Editar'
         delete: 'Apagar'

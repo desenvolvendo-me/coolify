@@ -1,0 +1,6 @@
+pt-BR:
+  activerecord:
+    models:
+      technical_report:
+        one: 'PMOC'
+        other: 'PMOCs'
