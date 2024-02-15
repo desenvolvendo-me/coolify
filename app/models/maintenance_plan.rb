@@ -8,7 +8,6 @@
 #  updated_at :datetime         not null
 #
 class MaintenancePlan < ApplicationRecord
-
   validates :name, presence: true
 
   def to_s
