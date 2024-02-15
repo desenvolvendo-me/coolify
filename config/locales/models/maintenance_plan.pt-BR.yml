@@ -1,0 +1,17 @@
+pt-BR:
+  activerecord:
+    errors:
+      models:
+        maintenance_plan:
+          attributes:
+            name:
+              blank: 'não pode ficar em branco'
+    models:
+      maintenance_plan:
+        one: 'Plano de manutenção'
+        other: 'Planos de manutenção'
+    attributes:
+      maintenance_plan:
+        name: 'Nome'
+        created_at: 'Criado em'
+        updated_at: 'Atualizado em'

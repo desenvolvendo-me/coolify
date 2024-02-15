@@ -1,0 +1,9 @@
+pt-BR:
+  manager:
+    maintenance_plans:
+      create:
+        success: 'Plano de manutenção cadastrado com sucesso.'
+      update:
+        success: 'Plano de manutenção atualizado com sucesso.'
+      destroy:
+        success: 'Plano de manutenção apagado com sucesso.'

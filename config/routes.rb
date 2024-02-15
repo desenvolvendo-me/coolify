@@ -28,6 +28,8 @@ Rails.application.routes.draw do
       end
     end
     resources :maintenances
+    resources :maintenance_plans
+
     get '', to: 'home#index', as: :home
   end
 
