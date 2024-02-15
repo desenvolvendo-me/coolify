@@ -1,10 +1,10 @@
 module Manager
   class UsersController < InternalController
     before_action :authenticate_user!
-    before_action :check_admin
     before_action :set_user, only: %i[show edit update destroy]
 
     def index
+      authorize User
       @q = User.where.not(id: current_user).ransack(params[:q])
       @users = @q.result(distinct: true)
       @users = @users.order('created_at').page(params[:page]).per(4)
@@ -55,10 +55,6 @@ module Manager
 
     def set_user
       @user = User.find(params[:id])
-    end
-
-    def check_admin
-      redirect_to(root_url, notice: t('.check_admin')) unless current_user.admin?
     end
 
     def user_params
