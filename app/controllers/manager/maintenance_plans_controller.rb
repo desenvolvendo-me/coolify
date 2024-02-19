@@ -48,7 +48,7 @@ module Manager
     end
 
     def maintenance_plan_params
-      params.require(:maintenance_plan).permit(:name)
+      params.require(:maintenance_plan).permit(:name, :status)
     end
   end
 end
