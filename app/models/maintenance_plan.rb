@@ -9,9 +9,10 @@
 #  updated_at :datetime         not null
 #
 class MaintenancePlan < ApplicationRecord
-  validates :name, presence: true
-
+  has_many :maintenances, dependent: :destroy
   enum status: { to_do: 'to do', doing: 'doing', done: 'done' }
+
+  validates :name, presence: true
 
   def to_s
     name
