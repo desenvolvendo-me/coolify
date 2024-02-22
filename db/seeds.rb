@@ -68,9 +68,12 @@ if Rails.env.development?
   end
 
   # Maintenance plans
-  MaintenancePlan.statuses.keys.each do |status|
-    MaintenancePlan.create!(name: FFaker::Lorem.word, status: status)
+  ActsAsTenant.with_tenant(company_1) do
+    MaintenancePlan.statuses.keys.each do |status|
+      MaintenancePlan.create!(name: FFaker::Lorem.word, status: status)
+    end
   end
+
 
   # Technical Reports / PMOCs
   ActsAsTenant.with_tenant(company_1) do
