@@ -15,17 +15,12 @@ module Manager
     end
 
     def create
-      @maintenance = Maintenance.new(maintenance_params)
-      MaintenancePlans::Linker.call(@maintenance)
+      @maintenance = Maintenances::Creator.call(maintenance_params)
 
-      if @maintenance.maintenance_plan
-        if @maintenance.save
-          redirect_to manager_maintenance_path(@maintenance), notice: t('.success')
-        else
-          render :new, status: :unprocessable_entity
-        end
+      if @maintenance.persisted?
+        redirect_to manager_maintenance_path(@maintenance), notice: t('.success')
       else
-        redirect_to new_manager_maintenance_path, notice: t('.no_maintenance_plan')
+        render :new, status: :unprocessable_entity
       end
     end
 

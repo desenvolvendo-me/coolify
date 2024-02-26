@@ -26,4 +26,13 @@ class Maintenance < ApplicationRecord
   belongs_to :maintenance_plan, optional: true
 
   validates :date, presence: true
+  validate :maintenance_plan_presence
+
+  private
+
+  def maintenance_plan_presence
+    return if maintenance_plan.present?
+
+    errors.add(:maintenance_plan, 'disponível não foi encontrado.')
+  end
 end
