@@ -46,7 +46,7 @@ module Manager
     end
 
     def equipment_params
-      params.require(:equipment).permit(:tag)
+      params.require(:equipment).permit(:tag, :number_occupants, :equipment_type, :equipment_model)
     end
   end
 end
