@@ -11,5 +11,5 @@
 class Equipment < ApplicationRecord
   acts_as_tenant :company
 
-  validates :tag, presence: true
+  validates :tag, :number_occupants, :equipment_type, :equipment_model, presence :true
 end
