@@ -2,9 +2,8 @@ pt-BR:
   manager:
     maintenances:
       create:
-        success: 'Plano de manutenção cadastrado com sucesso.'
-        no_maintenance_plan: "Não existe Plano de Manutenção com status 'A fazer' para ser vinculado."
+        success: 'Manutenção cadastrada com sucesso.'
       update:
-        success: 'Plano de manutenção atualizado com sucesso.'
+        success: 'Manutenção atualizada com sucesso.'
       destroy:
-        success: 'Plano de manutenção apagado com sucesso.'
+        success: 'Manutenção apagada com sucesso.'
