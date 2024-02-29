@@ -6,6 +6,8 @@ pt-BR:
           attributes:
             date:
               blank: 'nao pode ficar em branco'
+            maintenance_plan:
+              no_maintenance_plan: " com status 'A fazer' para ser vinculado não existe."
     models:
       maintenance:
         one: 'Manutenção'
@@ -14,5 +16,6 @@ pt-BR:
       maintenance:
         date: 'Data'
         cooler: 'Equipamento'
+        maintenance_plan: 'Plano de Manutenção'
         created_at: 'Criado em'
         updated_at: 'Atualizado em'
