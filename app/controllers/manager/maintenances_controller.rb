@@ -15,9 +15,9 @@ module Manager
     end
 
     def create
-      @maintenance = Maintenances::Creator.call(maintenance_params)
+      @maintenance = Maintenance.new(maintenance_params)
 
-      if @maintenance.persisted?
+      if @maintenance.save
         redirect_to manager_maintenance_path(@maintenance), notice: t('.success')
       else
         render :new, status: :unprocessable_entity
