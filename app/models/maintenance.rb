@@ -25,14 +25,19 @@ class Maintenance < ApplicationRecord
   belongs_to :cooler
   belongs_to :maintenance_plan, optional: true
 
-  validates :date, presence: true
-  validate :maintenance_plan_presence
+  validates :date, :cooler, presence: true
+
+  before_create :link_to_do_plan
 
   private
 
-  def maintenance_plan_presence
-    return if maintenance_plan.present?
+  def link_to_do_plan
+    linker = Maintenances::Linker.new(self)
+    linker.call
 
-    errors.add(:maintenance_plan, 'disponível não foi encontrado.')
+    return if linker.success?
+
+    errors.add(:maintenance_plan, :no_maintenance_plan)
+    throw(:abort)
   end
 end
