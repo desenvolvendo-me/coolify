@@ -16,6 +16,10 @@ pt-BR:
         edit: 'Editar'
         delete: 'Apagar'
         delete_confirm: 'Você tem certeza?'
+        status:
+          to_do: 'A fazer'
+          doing: 'Fazendo'
+          done: 'Concluído'
       edit:
         title: 'Editando Plano de manutenção'
         show: 'Mostrar'
@@ -29,4 +33,8 @@ pt-BR:
         edit: 'Editar'
         delete: 'Apagar'
         delete_confirm: 'Você tem certeza?'
+        status:
+          to_do: 'A fazer'
+          doing: 'Fazendo'
+          done: 'Concluído'
 

@@ -13,5 +13,10 @@ pt-BR:
     attributes:
       maintenance_plan:
         name: 'Nome'
+        status:
+          one: 'Status'
+          to_do: "A fazer"
+          doing: "Fazendo"
+          done: "Concluído"
         created_at: 'Criado em'
         updated_at: 'Atualizado em'
