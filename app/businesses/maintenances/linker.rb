@@ -1,6 +1,5 @@
 module Maintenances
   class Linker < BusinessApplication
-
     def initialize(maintenance)
       @maintenance = maintenance
     end
