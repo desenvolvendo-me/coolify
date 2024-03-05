@@ -6,8 +6,7 @@ pt-BR:
           attributes:
             date:
               blank: 'nao pode ficar em branco'
-            maintenance_plan:
-              no_maintenance_plan: " com status 'A fazer' para ser vinculado não existe."
+          no_maintenance_plan: "Não existe Plano de Manutenção com status 'A fazer' para ser vinculado."
     models:
       maintenance:
         one: 'Manutenção'

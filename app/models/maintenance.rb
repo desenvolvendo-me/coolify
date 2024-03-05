@@ -37,7 +37,7 @@ class Maintenance < ApplicationRecord
 
     return if linker.success?
 
-    errors.add(:maintenance_plan, :no_maintenance_plan)
+    errors.add(:base, :no_maintenance_plan)
     throw(:abort)
   end
 end
