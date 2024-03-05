@@ -2,10 +2,11 @@ require 'rails_helper'
 
 RSpec.describe Manager::MaintenancePlansController, type: :controller do
   let(:admin_user) { create(:user, role: :admin) }
-  let(:maintenance_plan) { create(:maintenance_plan) }
+  let(:maintenance_plan) { create(:maintenance_plan, company: admin_user.company) }
 
   before do
     sign_in admin_user
+    ActsAsTenant.current_tenant = admin_user.company
   end
 
   describe 'GET #index' do
