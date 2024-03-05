@@ -4,8 +4,7 @@
     <%= form.input :status,
                    collection: MaintenancePlan.statuses.keys.map { |status|
                      [I18n.t("activerecord.attributes.maintenance_plan.status.#{status}"), status]
-                   },
-                   selected: 'to_do'
+                   }
     %>
   </div>
 </div>
