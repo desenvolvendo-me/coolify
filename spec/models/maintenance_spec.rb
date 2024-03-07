@@ -26,9 +26,34 @@ RSpec.describe Maintenance, type: :model do
   describe 'association' do
     it { should belong_to(:company) }
     it { should belong_to(:cooler) }
+    it { should belong_to(:maintenance_plan).optional(true) }
   end
 
   describe 'validations' do
     it { is_expected.to validate_presence_of(:date) }
+    it { is_expected.to validate_presence_of(:cooler) }
+  end
+
+  describe 'callbacks' do
+    let(:company) { create(:company) }
+    let(:maintenance) { build(:maintenance) }
+
+    before do
+      ActsAsTenant.current_tenant = company
+    end
+
+    context 'when attempting to save a new Maintenance record without a "to_do" maintenance plan' do
+      it 'does not save the Maintenance record before linking it' do
+        expect { maintenance.save }.not_to change(Maintenance, :count)
+      end
+    end
+
+    context 'when attempting to save a new Maintenance record with a "to_do" maintenance plan' do
+      let!(:to_do_plan) { create(:maintenance_plan, status: 'to do') }
+
+      it 'saves the Maintenance record after successfully linking it' do
+        expect { maintenance.save }.to change(Maintenance, :count).by(1)
+      end
+    end
   end
 end
