@@ -23,4 +23,32 @@ RSpec.describe MaintenancePlan, type: :model do
   describe 'validations' do
     it { should validate_presence_of(:name) }
   end
+
+  describe 'associations' do
+    it { should have_many(:maintenances).dependent(:destroy) }
+  end
+
+  describe 'enums' do
+    it do
+      should define_enum_for(:status)
+        .with_values(to_do: 'to do', doing: 'doing', done: 'done')
+        .backed_by_column_of_type(:string)
+    end
+  end
+
+  describe 'methods' do
+    describe '#to_s' do
+      let(:company) { create(:company) }
+      let(:maintenance_plan_name) { FFaker::Lorem.word }
+      let(:maintenance_plan) { create(:maintenance_plan, name: maintenance_plan_name) }
+
+      before do
+        ActsAsTenant.current_tenant = company
+      end
+
+      it 'returns the name of the maintenance plan' do
+        expect(maintenance_plan.to_s).to eq(maintenance_plan_name)
+      end
+    end
+  end
 end
