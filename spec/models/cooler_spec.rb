@@ -2,12 +2,15 @@
 #
 # Table name: coolers
 #
-#  id         :bigint           not null, primary key
-#  tag        :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  client_id  :bigint           not null
-#  company_id :integer
+#  id              :bigint           not null, primary key
+#  equipment_model :string
+#  equipment_type  :string
+#  occupants_count :integer
+#  tag             :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  client_id       :bigint           not null
+#  company_id      :integer
 #
 # Indexes
 #

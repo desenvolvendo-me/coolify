@@ -1,6 +1,22 @@
 <div class="flex flex-col">
   <div class="flex">
     <%= form.input :client_id, collection: Client.all, label_method: :to_s, value_method: :id, prompt: "Selecione um cliente" %>
+  </div>
+  <div class="flex">
     <%= form.input :tag, placeholder: ' ' %>
+  </div>
+  <!-- New Fields -->
+  <div class="flex">
+    <%= form.input :occupants_count, placeholder: '' %>
+  </div>
+  <div class="flex">
+    <%= form.input :equipment_type, placeholder: '' %>
+  </div>
+  <div class="flex">
+    <%= form.input :equipment_model, placeholder: '' %>
+  </div>
+  <!--Other fields if any-->
+  <div class="actions">
+    <%= form.button :submit%>
   </div>
 </div>
