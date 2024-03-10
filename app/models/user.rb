@@ -4,6 +4,7 @@
 #
 #  id                     :bigint           not null, primary key
 #  avatar                 :string
+#  cft                    :string
 #  confirmation_sent_at   :datetime
 #  confirmation_token     :string
 #  confirmed_at           :datetime

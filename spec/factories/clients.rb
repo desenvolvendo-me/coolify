@@ -2,10 +2,19 @@
 #
 # Table name: clients
 #
-#  id         :bigint           not null, primary key
-#  name       :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id           :bigint           not null, primary key
+#  bairro       :string
+#  cep          :string
+#  cidade       :string
+#  cnpj         :string
+#  email        :string
+#  endereco     :string
+#  name         :string
+#  razao_social :string
+#  telefone     :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  company_id   :integer
 #
 FactoryBot.define do
   factory :client do
