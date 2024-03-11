@@ -1,5 +1,10 @@
 <div class="flex flex-col">
   <div class="flex">
     <%= form.input :name, placeholder: '' %>
+    <%= form.input :status,
+                   collection: MaintenancePlan.statuses.keys.map { |status|
+                     [I18n.t("activerecord.attributes.maintenance_plan.status.#{status}"), status]
+                   }
+    %>
   </div>
 </div>

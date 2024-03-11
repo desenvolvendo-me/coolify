@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_13_111404) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_05_121944) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -86,14 +86,17 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_13_111404) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "company_id"
-    t.integer "client_id"
+    t.bigint "client_id", null: false
     t.index ["client_id"], name: "index_coolers_on_client_id"
   end
 
   create_table "maintenance_plans", force: :cascade do |t|
     t.string "name"
+    t.bigint "company_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status", default: "to do"
+    t.index ["company_id"], name: "index_maintenance_plans_on_company_id"
   end
 
   create_table "maintenances", force: :cascade do |t|
@@ -102,7 +105,18 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_13_111404) do
     t.datetime "updated_at", null: false
     t.integer "company_id"
     t.integer "cooler_id"
+    t.bigint "maintenance_plan_id"
     t.index ["cooler_id"], name: "index_maintenances_on_cooler_id"
+    t.index ["maintenance_plan_id"], name: "index_maintenances_on_maintenance_plan_id"
+  end
+
+  create_table "technical_reports", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "company_id"
+    t.bigint "client_id", null: false
+    t.index ["client_id"], name: "index_technical_reports_on_client_id"
+    t.index ["company_id"], name: "index_technical_reports_on_company_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -129,5 +143,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_13_111404) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "coolers", "clients"
+  add_foreign_key "maintenance_plans", "companies"
   add_foreign_key "maintenances", "coolers"
+  add_foreign_key "maintenances", "maintenance_plans"
+  add_foreign_key "technical_reports", "clients"
 end

@@ -16,18 +16,11 @@ module Manager
 
     def create
       @maintenance = Maintenance.new(maintenance_params)
-      respond_to do |format|
-        if @maintenance.save
-          format.html do
-            redirect_to manager_maintenance_path(@maintenance),
-                        notice: t('.create')
-          end
-        else
-          format.html do
-            render :new,
-                   status: :unprocessable_entity
-          end
-        end
+
+      if @maintenance.save
+        redirect_to manager_maintenance_path(@maintenance), notice: t('.success')
+      else
+        render :new, status: :unprocessable_entity
       end
     end
 
@@ -38,7 +31,7 @@ module Manager
         if @maintenance.update(maintenance_params)
           format.html do
             redirect_to manager_maintenance_path(@maintenance),
-                        notice: t('.update')
+                        notice: t('.success')
           end
         else
           format.html do
@@ -54,7 +47,7 @@ module Manager
       respond_to do |format|
         format.html do
           redirect_to manager_maintenances_path,
-                      notice: t('.destroy')
+                      notice: t('.success')
         end
       end
     end
