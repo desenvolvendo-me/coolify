@@ -50,9 +50,9 @@ if Rails.env.development?
   end
 
   # Maintenance plans
-  ActsAsTenant.with_tenant(company_1) do
+  ActsAsTenant.with_tenant(Client.first) do
     MaintenancePlan.statuses.keys.each do |status|
-      MaintenancePlan.create!(name: FFaker::Lorem.word, status: status)
+      Client.first.maintenance_plans.create!(name: FFaker::Lorem.word, status: status)
     end
   end
 
