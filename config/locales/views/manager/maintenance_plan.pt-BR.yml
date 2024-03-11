@@ -37,4 +37,6 @@ pt-BR:
           to_do: 'A fazer'
           doing: 'Fazendo'
           done: 'Concluído'
+      form:
+        select_a_client: 'Selecione um cliente'
 
