@@ -23,5 +23,6 @@
 FactoryBot.define do
   factory :maintenance_plan do
     name { FFaker::Lorem.word }
+    client
   end
 end
