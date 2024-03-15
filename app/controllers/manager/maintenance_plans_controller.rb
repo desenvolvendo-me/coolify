@@ -1,6 +1,7 @@
 module Manager
   class MaintenancePlansController < InternalController
     before_action :set_maintenance_plan, only: %i[show edit update destroy]
+    before_action :set_client, only: %i[new edit]
 
     def index
       @q = MaintenancePlan.ransack(params[:q])
@@ -47,8 +48,12 @@ module Manager
       @maintenance_plan = MaintenancePlan.find(params[:id])
     end
 
+    def set_client
+      @clients = Client.by_company(current_tenant)
+    end
+
     def maintenance_plan_params
-      params.require(:maintenance_plan).permit(:name, :status)
+      params.require(:maintenance_plan).permit(:name, :status, :client_id)
     end
   end
 end

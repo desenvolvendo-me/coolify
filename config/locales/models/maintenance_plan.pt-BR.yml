@@ -13,6 +13,7 @@ pt-BR:
     attributes:
       maintenance_plan:
         name: 'Nome'
+        client: 'Cliente'
         status:
           one: 'Status'
           to_do: "A fazer"

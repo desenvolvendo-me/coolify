@@ -50,9 +50,9 @@ if Rails.env.development?
   end
 
   # Maintenance plans
-  ActsAsTenant.with_tenant(company_1) do
+  ActsAsTenant.with_tenant(Client.first) do
     MaintenancePlan.statuses.keys.each do |status|
-      MaintenancePlan.create!(name: FFaker::Lorem.word, status: status)
+      Client.first.maintenance_plans.create!(name: FFaker::Lorem.word, status: status)
     end
   end
 
@@ -77,5 +77,18 @@ if Rails.env.development?
   # Technical Reports / PMOCs
   ActsAsTenant.with_tenant(company_1) do
     TechnicalReport.create(client: Client.all.sample, company: company_1)
+  end
+
+  MaintenancePlan.to_do.destroy_all
+
+  client = nil
+  ActsAsTenant.with_tenant(company_1) do
+    client = Client.create(name: 'Cassio')
+  end
+
+  ActsAsTenant.with_tenant(company_1) do
+    3.times do
+      Cooler.create(tag: FFaker::Vehicle.vin[0..5], client: client)
+    end
   end
 end
