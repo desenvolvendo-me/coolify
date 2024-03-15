@@ -28,7 +28,21 @@ class MaintenancePlan < ApplicationRecord
 
   validates :name, presence: true
 
+  after_create :create_related_maintenance_plans
+
   def to_s
     name
+  end
+
+  private
+
+  def create_related_maintenance_plans
+    return unless to_do?
+
+    ActsAsTenant.with_tenant(company) do
+      client.coolers.each do |cooler|
+        cooler.maintenances.create!(date: Time.zone.today)
+      end
+    end
   end
 end

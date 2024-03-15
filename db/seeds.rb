@@ -78,4 +78,17 @@ if Rails.env.development?
   ActsAsTenant.with_tenant(company_1) do
     TechnicalReport.create(client: Client.all.sample, company: company_1)
   end
+
+  MaintenancePlan.to_do.destroy_all
+
+  client = nil
+  ActsAsTenant.with_tenant(company_1) do
+    client = Client.create(name: 'Cassio')
+  end
+
+  ActsAsTenant.with_tenant(company_1) do
+    3.times do
+      Cooler.create(tag: FFaker::Vehicle.vin[0..5], client: client)
+    end
+  end
 end
