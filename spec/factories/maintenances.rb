@@ -2,13 +2,18 @@
 #
 # Table name: maintenances
 #
-#  id                    :bigint           not null, primary key
-#  date                  :date
-#  preventive_maintenace :string
-#  created_at            :datetime         not null
-#  updated_at            :datetime         not null
-#  company_id            :integer
-#  cooler_id             :integer
+#  id                       :bigint           not null, primary key
+#  date                     :date
+#  equipment_hygiene        :string
+#  frequency                :string
+#  irregularity_maintenance :string
+#  next_maintenance         :date
+#  preventive_maintenace    :string
+#  preventive_maintenance   :string
+#  created_at               :datetime         not null
+#  updated_at               :datetime         not null
+#  company_id               :integer
+#  cooler_id                :integer
 #
 # Indexes
 #

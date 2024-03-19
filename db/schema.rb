@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_10_222035) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_12_204128) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -123,6 +123,11 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_10_222035) do
     t.integer "company_id"
     t.integer "cooler_id"
     t.string "preventive_maintenace"
+    t.string "preventive_maintenance"
+    t.string "equipment_hygiene"
+    t.string "frequency"
+    t.date "next_maintenance"
+    t.string "irregularity_maintenance"
     t.index ["cooler_id"], name: "index_maintenances_on_cooler_id"
   end
 

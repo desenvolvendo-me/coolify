@@ -67,7 +67,7 @@ module Manager
     end
 
     def maintenance_params
-      params.require(:maintenance).permit(:date, :preventive_maintenace, :equipment_hygiene, :frequency, :next_maintence, :irregularity_maintenance)
+      params.require(:maintenance).permit(:date, :preventive_maintenace, :equipment_hygiene, :frequency, :next_maintenance, :irregularity_maintenance)
     end
   end
 end

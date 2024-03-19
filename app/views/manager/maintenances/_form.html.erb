@@ -1,29 +1,31 @@
 <%= form_with(model: [:manager, @maintenance], local: true) do |form| %>
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.date_field :date, start_year: Date.today.year - 10, order: [:day, :month, :year] %>
+  <div class="flex flex-col">
+    <div class="flex mb-4">
+      <%= form.label :date, class: "mr-2" %>
+      <%= form.date_field :date, class: "rounded-md border-gray-300" %>
+    </div>
+    <div class="flex mb-4">
+      <%= form.label :preventive_maintenance, class: "mr-2" %>
+      <%= form.text_field :preventive_maintenance, class: "rounded-md border-gray-300" %>
+    </div>
+    <div class="flex mb-4">
+      <%= form.label :equipment_hygiene, class: "mr-2" %>
+      <%= form.text_field :equipment_hygiene, class: "rounded-md border-gray-300" %>
+    </div>
+    <div class="flex mb-4">
+      <%= form.label :frequency, class: "mr-2" %>
+      <%= form.text_field :frequency, class: "rounded-md border-gray-300" %>
+    </div>
+    <div class="flex mb-4">
+      <%= form.label :next_maintenance, class: "mr-2" %>
+      <%= form.text_field :next_maintenance, class: "rounded-md border-gray-300" %>
+    </div>
+    <div class="flex mb-4">
+      <%= form.label :irregularity_maintenance, class: "mr-2" %>
+      <%= form.text_area :irregularity_maintenance, class: "rounded-md border-gray-300" %>
+    </div>
   </div>
-  <div class="field">
-    <%= form.label :preventive_maintenance %>
-    <%= form.text_field :preventive_maintenance %>
-  </div>
-  <div class="field">
-    <%= form.label :equipment_hygiene %>
-    <%= form.text_field :equipment_hygiene %>
-  </div>
-  <div class="field">
-    <%= form.label :frequency %>
-    <%= form.text_field :frequency %>
-  </div>
-  <div class="field">
-    <%= form.label :next_maintence %>
-    <%= form.text_field :next_maintence %>
-  </div>
-  <div class="field">
-    <%= form.label :irregularity_maintenance %>
-    <%= form.text_field :irregularity_maintenance %>
-  </div>
-  <div class="actions">
-    <%= form.submit %>
+  <div class="flex">
+    <%= form.submit "Submit", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
   </div>
 <% end %>
