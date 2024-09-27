@@ -1,0 +1,51 @@
+--- !ruby/object:Railsui::Configuration
+application_name: Coolify
+support_email: dev.philipe@outlook.com
+theme: shepherd
+pages:
+- about
+- account_notifications
+- account_payment_methods
+- account_payouts
+- account_preferences
+- api
+- booking
+- bookings
+- calendar
+- changelog
+- contact
+- dashboard
+- edit_booking
+- help_center
+- inbox
+- insights
+- new_booking
+- pricing
+- privacy_policy
+- properties
+- terms
+colors:
+  primary:
+    '50': "#eaf6fc"
+    '100': "#c1e3f7"
+    '200': "#98d1f2"
+    '300': "#6fbfed"
+    '400': "#46ace7"
+    '500': "#1d9ae2"
+    '600': "#187eb9"
+    '700': "#126290"
+    '800': "#0d4667"
+    '900': "#082a3e"
+    '950': "#030e15"
+  secondary:
+    '50': "#eaf6fc"
+    '100': "#c1e3f7"
+    '200': "#98d1f2"
+    '300': "#6fbfed"
+    '400': "#46ace7"
+    '500': "#1d9ae2"
+    '600': "#187eb9"
+    '700': "#126290"
+    '800': "#0d4667"
+    '900': "#082a3e"
+    '950': "#030e15"

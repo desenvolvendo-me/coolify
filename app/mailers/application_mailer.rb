@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'suport@domain.com'
-  layout 'mailer'
+  default from: email_address_with_name("from@#{Railsui.config.application_name.parameterize(separator: "")}.com", "#{Railsui.config.application_name}")
+  layout "mailer"
 end

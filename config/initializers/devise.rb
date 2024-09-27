@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '165e08dd1e08886c9a47936374b264056266e091f34c66f5915d60881da108d32a944415dcdd0e21e97a1b3618d137404752a8232df7b64188315ece07ae9e7e'
+  # config.secret_key = 'b300d93c5c2dea9a5b8b8316ebd04e6a7228711115986a824bb97a08925c2f3fdd66e6d786465f1138a58d21007c996769fb363fa8c44c1deadd965a9cad71b7'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -126,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '5a74234349f27ef4ae4f8f5f6503c92282b2435cb701f448766b351ee8a2d2b857e87e27c8e780cce0fab5c90aa9367937655451565571e093d698bef3e7abcd'
+  # config.pepper = 'f7bd957ff881e5d5e955959fc969090fd0308c0c479530b585234bc345333508579e6037f879bc3f6508c0f732bd483d08f16c4e12b5d44fcd0a05ef67d652c6'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -299,7 +299,7 @@ Devise.setup do |config|
   # ==> Hotwire/Turbo configuration
   # When using Devise with Hotwire/Turbo, the http status for error responses
   # and some redirects must match the following. The default in Devise for existing
-  # apps is `200 OK` and `302 Found respectively`, but new apps are generated with
+  # apps is `200 OK` and `302 Found` respectively, but new apps are generated with
   # these new defaults that match Hotwire/Turbo behavior.
   # Note: These might become the new default in future versions of Devise.
   config.responder.error_status = :unprocessable_entity
@@ -310,4 +310,12 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
+end
+
+Rails.application.config.to_prepare do
+  Devise::SessionsController.layout "devise"
+  Devise::RegistrationsController.layout proc { |controller| user_signed_in? ? "application" : "devise" }
+  Devise::ConfirmationsController.layout "devise"
+  Devise::UnlocksController.layout "devise"
+  Devise::PasswordsController.layout "devise"
 end
